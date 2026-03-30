@@ -40,19 +40,6 @@
         
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
-        /* Smooth Scrolling Header Navigation */
-        nav {
-            position: fixed; top: 0; left: 0; width: 100%;
-            background-color: rgba(15, 28, 15, 0.9); padding: 10px 0;
-            z-index: 1000; text-align: center; border-bottom: 1px solid var(--neon-blue);
-        }
-        nav a {
-            color: var(--text-light); text-decoration: none; margin: 0 10px;
-            font-size: 0.8em; text-transform: uppercase; font-weight: 600; transition: color 0.3s;
-        }
-        @media(min-width: 600px) { nav a { margin: 0 15px; font-size: 0.9em; } }
-        nav a:hover { color: var(--neon-blue); }
-        
         /* Hero Section */
         .hero { 
             text-align: center; padding: 100px 20px 60px; 
@@ -181,19 +168,19 @@
 
         /* The Stylized Signatures */
         .official-signature {
-            font-family: 'Dancing Script', cursive; /* Cursive handwriting font */
+            font-family: 'Dancing Script', cursive; 
             font-size: 3.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
             margin: 10px 0;
         }
         
         .ashish-sig {
             color: var(--neon-blue); transform: rotate(-3deg);
-            opacity: 1; /* Always visible */
+            opacity: 1; 
         }
         
         .megan-sig {
             color: var(--bloom-gold); transform: rotate(-5deg);
-            opacity: 0; display: none; /* Hidden until clicked */
+            opacity: 0; display: none; 
         }
         
         .timestamp { font-family: monospace; font-size: 0.85em; margin-top: 10px; }
@@ -224,20 +211,13 @@
 </head>
 <body>
 
-    <nav>
-        <a href="#hero">Our Pic</a>
-        <a href="#landscape-his">Stats</a>
-        <a href="#site-zero">Site Zero</a>
-        <a href="#contract">The Accord</a>
-    </nav>
-
     <div class="hero" id="hero">
         <div class="couple-photo-container">
             <img src="20260118_193959.jpg" alt="Our Picture Together">
         </div>
         <div class="hero-title-container">
             <h1>Our Collective Almanac of the Earth</h1>
-            <p class="subtitle">Where Landscape Analysis Meets Geologic Harmony</p>
+            <p class="subtitle">Where Landscape Analysis Meets Geospatial Harmony</p>
             <div class="celebration-date">Celebrating Her (Mar 31) & His (Apr 2)</div>
         </div>
         
@@ -261,24 +241,24 @@
             </div>
 
             <div class="stat-card purple-card">
-                <div class="stat-icon">🌴</div>
-                <h3>Botanical Canopy</h3>
-                <div class="stat-value" id="treeGrowth">0 ft</div>
-                <div class="stat-desc">If a Royal Palm (specific to WPB) was planted on your birth year, it would be this tall today! (Growing ~4 feet per year).</div>
+                <div class="stat-icon">🌲</div>
+                <h3>Ancient Roots</h3>
+                <div class="stat-value" id="treeAgePercent">0%</div>
+                <div class="stat-desc">Compared to Methuselah, the world's oldest living tree (~4,855 years old), our combined time on Earth is just a tiny fraction. But every great landscape starts with a seed!</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🪨</div>
-                <h3>Geological Drift</h3>
-                <div class="stat-value" id="tectonicDrift">0 cm</div>
-                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! Time creates diamonds, and perfect GIS precision.</div>
+                <div class="stat-icon">🧭</div>
+                <h3>Magnetic Shift</h3>
+                <div class="stat-value" id="magneticShift">0 miles</div>
+                <div class="stat-desc">Since we were born, the Earth's magnetic North Pole has wandered this far! True north might drift geographically, but our coordinates locked in perfectly.</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🦶</div>
-                <h3>Paths Plotted</h3>
-                <div class="stat-value" id="sharedSteps">0</div>
-                <div class="stat-desc">A detailed calculation of total shared steps taken, assuming trails and city explorations based on a combined average!</div>
+                <div class="stat-icon">🌳</div>
+                <h3>Micro-Forest Potential</h3>
+                <div class="stat-value" id="carbonTrees">0 Trees</div>
+                <div class="stat-desc">The number of mature trees required in a beautifully planned landscape to offset the CO2 we've breathed out over our combined lifetimes! Keep designing those green spaces.</div>
             </div>
         </div>
 
@@ -388,14 +368,24 @@
             const msPerDay = 1000 * 60 * 60 * 24;
             const herDays = Math.max(0, Math.floor((today - herBday) / msPerDay));
             const hisDays = Math.max(0, Math.floor((today - hisBday) / msPerDay));
-            const totalCombinedDays = herDays + hisDays;
             
             const herAgePrecise = herDays / 365.2425; 
             const hisAgePrecise = hisDays / 365.2425;
+            const combinedAges = herAgePrecise + hisAgePrecise;
 
-            document.getElementById('treeGrowth').innerText = `${Math.floor(herAgePrecise * 4)} ft`;
-            document.getElementById('tectonicDrift').innerText = `${(hisAgePrecise * 2.5).toFixed(1)} cm`;
-            document.getElementById('sharedSteps').innerText = Math.floor(totalCombinedDays * 3000).toLocaleString();
+            // Ancient Roots calculation (Methuselah ~4,855 yrs old)
+            const methuselahAge = 4855;
+            const percentOld = ((combinedAges / methuselahAge) * 100).toFixed(2);
+            document.getElementById('treeAgePercent').innerText = `${percentOld}%`;
+
+            // Magnetic North calculation (~34 miles/year)
+            const magneticMiles = Math.floor(hisAgePrecise * 34);
+            document.getElementById('magneticShift').innerText = `${magneticMiles.toLocaleString()} miles`;
+
+            // Micro-Forest Calculation (Trees needed to offset CO2 breathed out)
+            // Avg human breathes ~730 lbs of CO2/year. A mature tree absorbs ~48 lbs/year.
+            const treesNeeded = Math.floor(combinedAges * (730 / 48));
+            document.getElementById('carbonTrees').innerText = `${treesNeeded.toLocaleString()} Trees`;
         }
 
         function updateHeartbeats() {
