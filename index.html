@@ -105,7 +105,7 @@
         }
         .couple-photo-container:hover img { transform: scale(1.03); }
 
-        /* Countdown Timer */
+        /* Shared Time Counter */
         .countdown-wrapper {
             background: rgba(15, 28, 15, 0.8);
             border: 2px solid var(--neon-blue);
@@ -124,7 +124,7 @@
         }
         #countdown {
             font-family: 'Oswald', sans-serif;
-            font-size: 2em;
+            font-size: 2.2em;
             color: var(--neon-blue);
             letter-spacing: 2px;
         }
@@ -132,8 +132,8 @@
             font-size: 0.4em;
             color: var(--stem-green);
             vertical-align: middle;
-            margin-left: 2px;
-            margin-right: 8px;
+            margin-left: 4px;
+            margin-right: 12px;
         }
 
         /* PHOTO 2 Section: The Close-up Clover */
@@ -336,6 +336,13 @@
         .timeline-subcontent { color: var(--bloom-gold); margin-top: 10px; font-style: italic; }
 
         .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--earth-charcoal); color: var(--stem-green); font-size: 1em; }
+        
+        /* Pulse animation for the heart */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -359,12 +366,10 @@
         </div>
         
         <div class="countdown-wrapper">
-            <h4>Countdown to our Shared April 1st Orbit</h4>
+            <h4>Minutes We've Shared</h4>
             <div id="countdown">
-                <span id="cd-days">00</span><span class="time-label">D</span>:
-                <span id="cd-hours">00</span><span class="time-label">H</span>:
-                <span id="cd-minutes">00</span><span class="time-label">M</span>:
-                <span id="cd-seconds">00</span><span class="time-label">S</span>
+                <span id="cd-minutes">0</span><span class="time-label">MINS</span>:
+                <span id="cd-seconds">00</span><span class="time-label">SEC</span>
             </div>
         </div>
     </div>
@@ -485,15 +490,6 @@ http://googleusercontent.com/map_location_reference/1
         Designed for a precise Landscape Planner, by her favorite Techie Geologist. <br>Our paths are now mapped, designed, and explored in unison. ❤️
     </div>
 
-    <style>
-        /* Pulse animation for the heart */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
-    </style>
-
     <script>
         // --- Static Stats ---
         function calculateStats() {
@@ -548,42 +544,33 @@ http://googleusercontent.com/map_location_reference/1
             document.getElementById('heartbeats').innerText = totalBeats.toLocaleString();
         }
 
-        // --- Live Countdown to April 1st ---
-        function updateCountdown() {
-            const now = new Date();
-            let currentYear = now.getFullYear();
+        // --- Live "Count-Up" of Shared Time ---
+        function updateSharedTime() {
+            // Start Date hidden in the code: December 18, 2025
+            const startDate = new Date('2025-12-18T00:00:00').getTime();
+            const now = new Date().getTime();
             
-            // Target Date: April 1st of the current year
-            let targetDate = new Date(`${currentYear}-04-01T00:00:00`);
+            // Prevent negative numbers if viewing before the start date somehow
+            const diff = Math.max(0, now - startDate);
 
-            // If April 1st has already passed this year, set target to next year's April 1st
-            if (now > targetDate) {
-                targetDate = new Date(`${currentYear + 1}-04-01T00:00:00`);
-            }
+            // Calculate total minutes and remaining rolling seconds
+            const totalMinutes = Math.floor(diff / (1000 * 60));
+            const seconds = Math.floor((diff / 1000) % 60);
 
-            const diff = targetDate - now;
-
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const m = Math.floor((diff / 1000 / 60) % 60);
-            const s = Math.floor((diff / 1000) % 60);
-
-            // Pad with leading zeros
-            document.getElementById('cd-days').innerText = d.toString().padStart(2, '0');
-            document.getElementById('cd-hours').innerText = h.toString().padStart(2, '0');
-            document.getElementById('cd-minutes').innerText = m.toString().padStart(2, '0');
-            document.getElementById('cd-seconds').innerText = s.toString().padStart(2, '0');
+            // Update the HTML
+            document.getElementById('cd-minutes').innerText = totalMinutes.toLocaleString();
+            document.getElementById('cd-seconds').innerText = seconds.toString().padStart(2, '0');
         }
 
         // Initialize on page load
         window.onload = function() {
             calculateStats();
             updateHeartbeats();
-            updateCountdown();
+            updateSharedTime();
             
             // Set intervals for live updates
             setInterval(updateHeartbeats, 1000);
-            setInterval(updateCountdown, 1000);
+            setInterval(updateSharedTime, 1000);
         };
     </script>
 </body>
