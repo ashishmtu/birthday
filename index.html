@@ -177,106 +177,24 @@
             border: 2px solid var(--petal-purple);
             text-align: center;
         }
-        .site-zero-desc {
-            font-size: 1.1em;
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto 30px;
-            line-height: 1.8;
-        }
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-bottom: 30px;
-        }
+        .site-zero-desc { font-size: 1.1em; color: var(--text-light); max-width: 800px; margin: 0 auto 30px; line-height: 1.8; }
+        .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
         @media(min-width: 768px) { .gallery-grid { grid-template-columns: 1fr 1fr 1fr 1fr; } }
-        .gallery-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            border-radius: 10px;
-            border: 2px solid var(--stem-green);
-            transition: transform 0.3s ease, border-color 0.3s;
-        }
-        .gallery-img:hover {
-            transform: scale(1.05);
-            border-color: var(--neon-blue);
-        }
-        .map-point {
-            background-color: var(--earth-charcoal);
-            padding: 20px;
-            border-radius: 15px;
-            border-left: 5px solid var(--neon-blue);
-            display: inline-block;
-            text-align: left;
-        }
+        .gallery-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 2px solid var(--stem-green); transition: transform 0.3s ease, border-color 0.3s; }
+        .gallery-img:hover { transform: scale(1.05); border-color: var(--neon-blue); }
+        
+        .map-point { background-color: var(--earth-charcoal); padding: 20px; border-radius: 15px; border-left: 5px solid var(--neon-blue); display: inline-block; text-align: left; }
         .map-point h4 { margin: 0 0 10px 0; color: var(--bloom-gold); }
         .map-point p { margin: 5px 0; font-family: monospace; color: var(--neon-blue); }
-        .map-link {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 10px 20px;
-            background-color: var(--stem-green);
-            color: var(--nocturnal-dark);
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
+        .map-link { display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: var(--stem-green); color: var(--nocturnal-dark); text-decoration: none; font-weight: bold; border-radius: 8px; transition: background 0.3s; }
         .map-link:hover { background-color: var(--bloom-gold); }
-
-        /* Interactive Controls */
-        .controls { 
-            display: flex; 
-            flex-direction: column; 
-            gap: 20px; 
-            background: rgba(30, 30, 30, 0.95);
-            padding: 30px; 
-            border-radius: 20px; 
-            margin: -40px auto 30px; 
-            max-width: 650px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
-            position: relative;
-            z-index: 10;
-            border: 2px solid var(--stem-green);
-        }
-        @media(min-width: 600px) { .controls { flex-direction: row; justify-content: space-around; } }
-        
-        .input-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .input-group label { font-weight: bold; color: var(--bloom-gold); margin-bottom: 8px;}
-        input[type="number"] { 
-            width: 120px; 
-            padding: 12px; 
-            border-radius: 12px; 
-            border: 2px solid var(--stem-green); 
-            background: var(--nocturnal-dark); 
-            color: var(--neon-blue); 
-            font-size: 1.4em; 
-            text-align: center; 
-            outline: none;
-            transition: border-color 0.3s;
-        }
-        input[type="number"]:focus { border-color: var(--neon-blue); }
 
         /* Stats Grid */
         .stats-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         @media(min-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
         
-        .stat-card { 
-            background: rgba(30, 30, 30, 0.95);
-            padding: 35px; 
-            border-radius: 20px; 
-            text-align: center; 
-            border-top: 5px solid var(--stem-green); 
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
-            cursor: default;
-        }
-        .stat-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 10px 30px rgba(0,229,255, 0.15);
-            border-top-color: var(--neon-blue);
-        }
+        .stat-card { background: rgba(30, 30, 30, 0.95); padding: 35px; border-radius: 20px; text-align: center; border-top: 5px solid var(--stem-green); transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; cursor: default; }
+        .stat-card:hover { transform: translateY(-8px); box-shadow: 0 10px 30px rgba(0,229,255, 0.15); border-top-color: var(--neon-blue); }
         .stat-icon { font-size: 3.5em; margin-bottom: 15px; display: inline-block; transition: transform 0.3s; }
         .stat-card:hover .stat-icon { transform: rotate(10deg); }
         .stat-value { font-size: 2.8em; font-weight: bold; color: var(--neon-blue); margin: 10px 0; }
@@ -292,57 +210,85 @@
 
         /* Timeline */
         .timeline-section { margin-top: 100px; }
-        .timeline { position: relative; padding-left: 35px; margin-top: 30px; margin-bottom: 100px; }
-        .timeline::before { 
-            content: ''; 
-            position: absolute; 
-            left: 12px; 
-            top: 0; 
-            bottom: 0; 
-            width: 5px; 
-            background: var(--stem-green); 
-            border-radius: 3px; 
-        }
+        .timeline { position: relative; padding-left: 35px; margin-top: 30px; margin-bottom: 50px; }
+        .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 5px; background: var(--stem-green); border-radius: 3px; }
         .timeline-item { margin-bottom: 50px; position: relative; opacity: 0.9; transition: opacity 0.3s; }
         .timeline-item:hover { opacity: 1; }
-        .timeline-item::before { 
-            content: ''; 
-            position: absolute; 
-            left: -33px; 
-            top: 8px; 
-            width: 20px; 
-            height: 20px; 
-            border-radius: 50%; 
-            background: var(--neon-blue); 
-            border: 4px solid var(--nocturnal-dark);
-            box-shadow: 0 0 15px var(--neon-blue); 
-            transition: transform 0.3s;
-        }
+        .timeline-item::before { content: ''; position: absolute; left: -33px; top: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--neon-blue); border: 4px solid var(--nocturnal-dark); box-shadow: 0 0 15px var(--neon-blue); transition: transform 0.3s; }
         .timeline-item:hover::before { transform: scale(1.3); }
         
         .timeline-item.birthday-point::before { background: var(--bloom-gold); box-shadow: 0 0 15px var(--bloom-gold); }
         .timeline-item.meeting-point::before { background: var(--petal-purple); box-shadow: 0 0 15px var(--petal-purple); }
 
         .timeline-date { font-weight: bold; color: var(--stem-green); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
-        .timeline-content { 
-            background: rgba(30, 30, 30, 0.95); 
-            padding: 25px; 
-            border-radius: 18px; 
-            border-left: 5px solid var(--neon-blue);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-        }
+        .timeline-content { background: rgba(30, 30, 30, 0.95); padding: 25px; border-radius: 18px; border-left: 5px solid var(--neon-blue); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
         .timeline-item.meeting-point .timeline-content { border-left-color: var(--petal-purple); }
         .timeline-content strong { color: var(--text-light); }
-        .timeline-subcontent { color: var(--bloom-gold); margin-top: 10px; font-style: italic; }
+
+        /* CONTRACT SECTION */
+        .contract-section {
+            background: rgba(30, 30, 30, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            margin-top: 50px;
+            border: 3px dashed var(--bloom-gold);
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8);
+        }
+        .contract-text {
+            text-align: left;
+            font-size: 1em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(15, 28, 15, 0.8);
+            border-left: 4px solid var(--neon-blue);
+            border-radius: 10px;
+        }
+        .contract-text li { margin-bottom: 10px; }
+        
+        #signature-pad-container { display: block; }
+        canvas {
+            border: 2px solid var(--stem-green);
+            border-radius: 10px;
+            background: #fff;
+            cursor: crosshair;
+            touch-action: none; /* Prevents scrolling while signing on mobile */
+            width: 100%;
+            max-width: 500px;
+            height: 150px;
+        }
+        .btn-group { margin-top: 15px; }
+        button {
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        .btn-clear { background-color: var(--earth-charcoal); color: var(--text-light); border: 2px solid var(--stem-green); }
+        .btn-clear:hover { background-color: var(--stem-green); color: var(--nocturnal-dark); }
+        .btn-sign { background-color: var(--bloom-gold); color: var(--nocturnal-dark); }
+        .btn-sign:hover { background-color: var(--neon-blue); transform: scale(1.05); }
+
+        #ratified-container {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid var(--stem-green);
+            border-radius: 10px;
+            background: rgba(15, 28, 15, 0.9);
+        }
+        #ratified-container h3 { color: var(--neon-blue); font-size: 1.8em; margin: 0 0 15px 0; letter-spacing: 2px; }
+        #saved-signature { max-width: 100%; height: auto; background: #fff; border-radius: 5px; padding: 5px; }
 
         .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--earth-charcoal); color: var(--stem-green); font-size: 1em; }
         
-        /* Pulse animation for the heart */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.15); }
-            100% { transform: scale(1); }
-        }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -352,7 +298,7 @@
         <a href="#hero">Our Pic</a>
         <a href="#landscape-his">Stats</a>
         <a href="#site-zero">Site Zero</a>
-        <a href="#almanac">Almanac</a>
+        <a href="#contract">The Accord</a>
     </nav>
 
     <div class="hero" id="hero">
@@ -376,28 +322,11 @@
 
     <div class="container">
         
-        <div class="botany-inspiration" id="botany-focus">
-            <div class="clover-photo"></div>
-            <div class="botany-text">
-                <h3>Inspired by Her Passion</h3>
-                <p>A detailed view of the natural geometry that inspires a landscape planner. The intricate patterns, the vibrant life, and the potential of every green space. This website balances your two unique worlds of design and earth science.</p>
-            </div>
-        </div>
-
-        <div class="controls">
-            <div class="input-group">
-                <label>Her Birth Year (1998)</label>
-                <input type="number" id="herYear" value="1998" oninput="calculateStats()">
-            </div>
-            <div class="input-group">
-                <label>His Birth Year (1995)</label>
-                <input type="number" id="hisYear" value="1995" oninput="calculateStats()">
-            </div>
-        </div>
+        <input type="hidden" id="herYear" value="1998">
+        <input type="hidden" id="hisYear" value="1995">
 
         <h2 id="landscape-his">Earthly Dynamics</h2>
         <div class="stats-grid">
-            
             <div class="stat-card red-card">
                 <div class="stat-icon" style="animation: pulse 1s infinite;">❤️</div>
                 <h3>Synchronized Beats</h3>
@@ -439,49 +368,67 @@
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/13402467205360074553_2" alt="Morikami Gardens 3" class="gallery-img">
                 <img src="http://googleusercontent.com/image_collection/image_retrieval/13402467205360074553_3" alt="Morikami Gardens 4" class="gallery-img">
             </div>
-
-            <div class="map-point">
-
-http://googleusercontent.com/map_location_reference/1
-                <h4>[Morikami Museum and Japanese Gardens](http://googleusercontent.com/map_location_reference/0)</h4>
-                <p>LAT: 26.4291° N</p>
-                <p>LON: -80.1564° W</p>
-                <p>ADDRESS: 4000 Morikami Park Rd, Delray Beach, FL</p>
-                <a href="https://maps.google.com/?cid=11125662181320233482&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank" class="map-link">View Geospatial Data</a>
-            </div>
         </div>
 
         <h2 id="almanac">The Collective Almanac</h2>
         <div class="timeline-section">
             <div class="timeline" id="expandedTimeline">
-                
                 <div class="timeline-item birthday-point">
                     <div class="timeline-date">March 31</div>
                     <div class="timeline-content">
-                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, requiring meticulous urban landscape planning and site analysis to place a massive steel monument within an ancient city.
+                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, requiring meticulous urban landscape planning.
                     </div>
                 </div>
 
                 <div class="timeline-item birthday-point">
                     <div class="timeline-date">April 1: The Collective Center</div>
                     <div class="timeline-content">
-                        <strong>Shared Paths (Our Day):</strong> On this day, we celebrate the barycenter: the center of mass around which two distinct yet perfectly aligned entities navigate. It’s the optimal alignment of planning and mapping!
+                        <strong>Shared Paths (Our Day):</strong> On this day, we celebrate the barycenter: the exact center of our dates.
                     </div>
                 </div>
 
                 <div class="timeline-item birthday-point">
                     <div class="timeline-date">April 2</div>
                     <div class="timeline-content">
-                        <strong>Moon Rock Analysis (2014):</strong> A monumental day for ground-based geology. A significant study was released announcing the *precise dating* of lunar fossils based on tectonic evidence.
+                        <strong>Moon Rock Analysis (2014):</strong> A monumental day for ground-based geology.
                     </div>
                 </div>
 
                 <div class="timeline-item meeting-point">
                     <div class="timeline-date">December 2025</div>
                     <div class="timeline-content">
-                        <strong>The Most Important Site Survey:</strong> We met at the Morikami Museum and Japanese Gardens. Amidst the bamboo, koi ponds, and perfectly curated landscape design, two paths officially became one.
+                        <strong>The Most Important Site Survey:</strong> We met at the Morikami Museum and Japanese Gardens. Two paths became one.
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <h2 id="contract">The April 1st Accords</h2>
+        <div class="contract-section">
+            <div class="contract-text">
+                <strong>TERMS AND CONDITIONS OF ALIGNMENT:</strong><br><br>
+                This binding resolution dictates the rules of engagement for the entities known as "The Techie Geologist" (Party A) and "The Landscape Planner" (Party B). By affixing a signature below, Party B agrees to the following:
+                <ul>
+                    <li>Party B's Solar Return (March 31) and Party A's Solar Return (April 2) shall henceforth be mathematically averaged.</li>
+                    <li>The designated official Celebration Zone is permanently mandated as <strong>April 1st</strong>.</li>
+                    <li>Despite external calendars labeling this date "April Fools' Day," any jokes regarding the legitimacy of this celebration are strictly prohibited and will result in a penalty of buying the other party extra coffee/plants.</li>
+                    <li>Both parties agree to continue mapping, planning, and exploring the Earth together.</li>
+                </ul>
+                <em>Sign below to ratify this agreement into the permanent digital landscape.</em>
+            </div>
+
+            <div id="signature-pad-container">
+                <canvas id="sigCanvas"></canvas>
+                <div class="btn-group">
+                    <button class="btn-clear" onclick="clearCanvas()">Clear</button>
+                    <button class="btn-sign" onclick="saveSignature()">I Agree & Sign</button>
+                </div>
+            </div>
+
+            <div id="ratified-container">
+                <h3>✔ OFFICIALLY RATIFIED</h3>
+                <img id="saved-signature" alt="Your Saved Signature">
+                <p style="color: var(--bloom-gold); margin-top:15px;"><em>This contract is now legally binding in the courts of Geology and Botany. Your signature has been saved to this device's local memory!</em></p>
             </div>
         </div>
     </div>
@@ -491,13 +438,10 @@ http://googleusercontent.com/map_location_reference/1
     </div>
 
     <script>
-        // --- Static Stats ---
+        // --- Static Stats & Math ---
         function calculateStats() {
-            let herYear = parseInt(document.getElementById('herYear').value) || 1998;
-            let hisYear = parseInt(document.getElementById('hisYear').value) || 1995;
-            
-            const herBday = new Date(`${herYear}-03-31T00:00:00`);
-            const hisBday = new Date(`${hisYear}-04-02T00:00:00`);
+            const herBday = new Date(`1998-03-31T00:00:00`);
+            const hisBday = new Date(`1995-04-02T00:00:00`);
             const today = new Date();
 
             const msPerDay = 1000 * 60 * 60 * 24;
@@ -508,69 +452,128 @@ http://googleusercontent.com/map_location_reference/1
             const herAgePrecise = herDays / 365.2425; 
             const hisAgePrecise = hisDays / 365.2425;
 
-            const palmHeight = Math.floor(herAgePrecise * 4);
-            document.getElementById('treeGrowth').innerText = `${palmHeight} ft`;
-
-            const driftCm = (hisAgePrecise * 2.5).toFixed(1);
-            document.getElementById('tectonicDrift').innerText = `${driftCm} cm`;
-
-            const stepsTaken = Math.floor(totalCombinedDays * 3000);
-            document.getElementById('sharedSteps').innerText = stepsTaken.toLocaleString();
+            document.getElementById('treeGrowth').innerText = `${Math.floor(herAgePrecise * 4)} ft`;
+            document.getElementById('tectonicDrift').innerText = `${(hisAgePrecise * 2.5).toFixed(1)} cm`;
+            document.getElementById('sharedSteps').innerText = Math.floor(totalCombinedDays * 3000).toLocaleString();
         }
 
-        // --- Live Heartbeats (Updates every second) ---
         function updateHeartbeats() {
-            let herYear = parseInt(document.getElementById('herYear').value) || 1998;
-            let hisYear = parseInt(document.getElementById('hisYear').value) || 1995;
-            
-            const herBday = new Date(`${herYear}-03-31T00:00:00`).getTime();
-            const hisBday = new Date(`${hisYear}-04-02T00:00:00`).getTime();
+            const herBday = new Date(`1998-03-31T00:00:00`).getTime();
+            const hisBday = new Date(`1995-04-02T00:00:00`).getTime();
             const now = new Date().getTime();
 
-            // Calculate exact milliseconds alive
-            const herMs = Math.max(0, now - herBday);
-            const hisMs = Math.max(0, now - hisBday);
-
-            // Average resting heart rate = 75 BPM.
-            // 75 beats per minute = 1.25 beats per second = 0.00125 beats per millisecond.
             const bpmPerMs = 75 / 60000;
+            const herBeats = Math.max(0, now - herBday) * bpmPerMs;
+            const hisBeats = Math.max(0, now - hisBday) * bpmPerMs;
             
-            const herBeats = herMs * bpmPerMs;
-            const hisBeats = hisMs * bpmPerMs;
-            
-            const totalBeats = Math.floor(herBeats + hisBeats);
-            
-            // Format with commas
-            document.getElementById('heartbeats').innerText = totalBeats.toLocaleString();
+            document.getElementById('heartbeats').innerText = Math.floor(herBeats + hisBeats).toLocaleString();
         }
 
-        // --- Live "Count-Up" of Shared Time ---
         function updateSharedTime() {
-            // Start Date hidden in the code: December 18, 2025
             const startDate = new Date('2025-12-18T00:00:00').getTime();
             const now = new Date().getTime();
-            
-            // Prevent negative numbers if viewing before the start date somehow
             const diff = Math.max(0, now - startDate);
 
-            // Calculate total minutes and remaining rolling seconds
-            const totalMinutes = Math.floor(diff / (1000 * 60));
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            // Update the HTML
-            document.getElementById('cd-minutes').innerText = totalMinutes.toLocaleString();
-            document.getElementById('cd-seconds').innerText = seconds.toString().padStart(2, '0');
+            document.getElementById('cd-minutes').innerText = Math.floor(diff / (1000 * 60)).toLocaleString();
+            document.getElementById('cd-seconds').innerText = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
         }
 
-        // Initialize on page load
+        // --- Signature Pad Logic ---
+        const canvas = document.getElementById('sigCanvas');
+        const ctx = canvas.getContext('2d');
+        let isDrawing = false;
+
+        // Resize canvas correctly
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+            ctx.strokeStyle = "#0f1c0f"; // Dark ink
+            ctx.lineWidth = 3;
+            ctx.lineCap = "round";
+        }
+
+        function startPosition(e) {
+            isDrawing = true;
+            draw(e);
+        }
+
+        function endPosition() {
+            isDrawing = false;
+            ctx.beginPath();
+        }
+
+        function draw(e) {
+            if (!isDrawing) return;
+            e.preventDefault(); // Prevent scrolling on touch
+
+            let x, y;
+            if (e.type.includes('touch')) {
+                const rect = canvas.getBoundingClientRect();
+                x = e.touches[0].clientX - rect.left;
+                y = e.touches[0].clientY - rect.top;
+            } else {
+                x = e.offsetX;
+                y = e.offsetY;
+            }
+
+            ctx.lineTo(x, y);
+            ctx.stroke();
+            ctx.beginPath();
+            ctx.moveTo(x, y);
+        }
+
+        // Mouse Events
+        canvas.addEventListener('mousedown', startPosition);
+        canvas.addEventListener('mouseup', endPosition);
+        canvas.addEventListener('mousemove', draw);
+        canvas.addEventListener('mouseout', endPosition);
+
+        // Touch Events for Mobile
+        canvas.addEventListener('touchstart', startPosition, {passive: false});
+        canvas.addEventListener('touchend', endPosition);
+        canvas.addEventListener('touchmove', draw, {passive: false});
+
+        function clearCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
+        function saveSignature() {
+            const dataURL = canvas.toDataURL(); // Get image data
+            localStorage.setItem('april1_agreement_signature', dataURL); // Save locally
+            showRatified(dataURL);
+        }
+
+        function showRatified(dataURL) {
+            document.getElementById('signature-pad-container').style.display = 'none';
+            document.getElementById('saved-signature').src = dataURL;
+            document.getElementById('ratified-container').style.display = 'block';
+        }
+
+        function checkExistingSignature() {
+            const savedSig = localStorage.getItem('april1_agreement_signature');
+            if (savedSig) {
+                showRatified(savedSig);
+            } else {
+                resizeCanvas();
+            }
+        }
+
+        // --- Initialization ---
         window.onload = function() {
             calculateStats();
             updateHeartbeats();
             updateSharedTime();
+            checkExistingSignature();
             
-            // Set intervals for live updates
             setInterval(updateHeartbeats, 1000);
             setInterval(updateSharedTime, 1000);
+        };
+        
+        window.onresize = function() {
+            // Only resize if they haven't signed yet to avoid wiping canvas accidentally
+            if (!localStorage.getItem('april1_agreement_signature')) {
+                resizeCanvas();
+            }
         };
     </script>
 </body>
