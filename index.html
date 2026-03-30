@@ -101,12 +101,6 @@
         .gallery-img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 2px solid var(--stem-green); transition: transform 0.3s ease, border-color 0.3s; }
         .gallery-img:hover { transform: scale(1.05); border-color: var(--neon-blue); }
         
-        .map-point { background-color: var(--earth-charcoal); padding: 20px; border-radius: 15px; border-left: 5px solid var(--neon-blue); display: inline-block; text-align: left; }
-        .map-point h4 { margin: 0 0 10px 0; color: var(--bloom-gold); }
-        .map-point p { margin: 5px 0; font-family: monospace; color: var(--neon-blue); }
-        .map-link { display: inline-block; margin-top: 15px; padding: 10px 20px; background-color: var(--stem-green); color: var(--nocturnal-dark); text-decoration: none; font-weight: bold; border-radius: 8px; transition: background 0.3s; }
-        .map-link:hover { background-color: var(--bloom-gold); }
-
         /* Stats Grid */
         .stats-grid { display: grid; grid-template-columns: 1fr; gap: 25px; }
         @media(min-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
@@ -140,7 +134,7 @@
         .timeline-item.meeting-point .timeline-content { border-left-color: var(--petal-purple); }
         .timeline-content strong { color: var(--text-light); }
 
-        /* CONTRACT & SEAL SECTION */
+        /* CONTRACT & DUAL SEAL SECTION */
         .contract-section {
             background: rgba(30, 30, 30, 0.95); padding: 40px; border-radius: 20px;
             margin-top: 50px; border: 3px dashed var(--bloom-gold); text-align: center;
@@ -153,50 +147,74 @@
         }
         .contract-text li { margin-bottom: 10px; }
         
+        /* Two-Party Signature Layout */
+        .signatures-wrapper {
+            display: flex; flex-direction: column; gap: 30px;
+            margin-top: 30px; border-top: 2px solid var(--earth-charcoal); padding-top: 30px;
+        }
+        @media(min-width: 768px) {
+            .signatures-wrapper { flex-direction: row; justify-content: space-around; }
+        }
+        
+        .signature-block {
+            flex: 1; text-align: center; padding: 20px;
+            background: rgba(15, 28, 15, 0.6); border-radius: 15px;
+            border: 1px solid var(--stem-green);
+            min-height: 200px; display: flex; flex-direction: column; justify-content: space-between;
+        }
+        
+        .sig-title {
+            font-family: 'Oswald', sans-serif; color: var(--text-light);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;
+            border-bottom: 1px dashed var(--stem-green); padding-bottom: 5px;
+        }
+
         /* The Button */
         #affix-btn {
-            padding: 15px 30px; font-size: 1.2em; font-weight: bold;
+            padding: 15px 20px; font-size: 1.1em; font-weight: bold;
             background-color: var(--bloom-gold); color: var(--nocturnal-dark);
             border: none; border-radius: 8px; cursor: pointer;
             transition: 0.3s; font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3); margin-top: auto; margin-bottom: auto;
         }
         #affix-btn:hover { background-color: var(--neon-blue); transform: scale(1.05); }
 
-        /* The Ratified Seal */
-        #ratified-container {
-            display: none; margin-top: 20px; padding: 30px;
-            border: 2px solid var(--stem-green); border-radius: 15px;
-            background: rgba(15, 28, 15, 0.9); position: relative;
-            overflow: hidden;
-        }
-        #ratified-container h3 { color: var(--stem-green); font-size: 1.5em; margin: 0 0 15px 0; letter-spacing: 2px; }
-        
-        /* The Stylized Signature */
+        /* The Stylized Signatures */
         .official-signature {
-            font-family: 'Dancing Script', cursive; /* The cursive handwriting font */
-            font-size: 4em;
-            color: var(--bloom-gold);
-            transform: rotate(-5deg); /* Slight angle for realism */
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            margin: 20px 0;
-            opacity: 0;
+            font-family: 'Dancing Script', cursive; /* Cursive handwriting font */
+            font-size: 3.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin: 10px 0;
         }
         
-        .timestamp {
-            font-family: monospace; color: var(--neon-blue);
-            font-size: 0.9em; margin-top: 10px; opacity: 0;
+        .ashish-sig {
+            color: var(--neon-blue); transform: rotate(-3deg);
+            opacity: 1; /* Always visible */
         }
+        
+        .megan-sig {
+            color: var(--bloom-gold); transform: rotate(-5deg);
+            opacity: 0; display: none; /* Hidden until clicked */
+        }
+        
+        .timestamp { font-family: monospace; font-size: 0.85em; margin-top: 10px; }
+        .ashish-time { color: var(--stem-green); opacity: 1; }
+        .megan-time { color: var(--neon-blue); opacity: 0; display: none; }
+
+        /* The Ratified Banner */
+        #ratified-banner {
+            display: none; margin-top: 30px; padding: 15px;
+            border: 2px solid var(--neon-blue); border-radius: 10px;
+            background: rgba(0, 229, 255, 0.1);
+        }
+        #ratified-banner h3 { color: var(--neon-blue); font-size: 1.5em; margin: 0; letter-spacing: 2px; }
 
         /* The Stamp Animation */
-        .stamp-animation {
-            animation: stampIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
+        .stamp-animation { animation: stampIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; display: block; }
         @keyframes stampIn {
             0% { opacity: 0; transform: scale(3) rotate(-20deg); }
             100% { opacity: 1; transform: scale(1) rotate(-5deg); }
         }
-        .fade-in { animation: fadeIn 1s ease 0.5s forwards; }
+        .fade-in { animation: fadeIn 1s ease 0.5s forwards; display: block; }
         @keyframes fadeIn { to { opacity: 1; } }
 
         .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--earth-charcoal); color: var(--stem-green); font-size: 1em; }
@@ -315,27 +333,42 @@
         <div class="contract-section">
             <div class="contract-text">
                 <strong>TERMS AND CONDITIONS OF ALIGNMENT:</strong><br><br>
-                This binding resolution dictates the rules of engagement for the entities known as "The Techie Geologist" (Party A) and "The Landscape Planner" (Party B). By affixing the Digital Seal below, Party B formally agrees to the following:
+                This binding resolution dictates the rules of engagement for the entities known as "The Techie Geologist" (Party A) and "The Landscape Planner" (Party B). Party A has pre-authorized this document. By affixing the Digital Seal below, Party B formally agrees to the following:
                 <ul>
                     <li>Party B's Solar Return (March 31) and Party A's Solar Return (April 2) shall henceforth be mathematically averaged.</li>
                     <li>The designated official Celebration Zone is permanently mandated as <strong>April 1st</strong>.</li>
                     <li>Despite external calendars labeling this date "April Fools' Day," any jokes regarding the legitimacy of this celebration are strictly prohibited and will result in a penalty of buying the other party extra coffee/plants.</li>
                     <li>Both parties agree to continue mapping, planning, and exploring the Earth together.</li>
                 </ul>
-                <em>By touching the button below, you permanently affix your seal to this digital landscape.</em>
             </div>
 
-            <div id="action-container">
-                <button id="affix-btn" onclick="affixSeal()">Touch to Affix Seal & Agree</button>
-            </div>
-
-            <div id="ratified-container">
-                <h3>✔ OFFICIALLY RATIFIED</h3>
-                <div class="official-signature" id="megan-signature">Megan Bichotte</div>
-                <div class="timestamp" id="signature-time"></div>
+            <div class="signatures-wrapper">
                 
-                <p style="color: var(--stem-green); margin-top:20px; font-size: 0.9em;">
-                    <em>This contract is now legally binding in the courts of Geology and Botany. <br>This seal has been permanently etched into this device's local memory!</em>
+                <div class="signature-block">
+                    <div class="sig-title">Party A: The Techie Geologist</div>
+                    <div style="margin: auto 0;">
+                        <div class="official-signature ashish-sig">Ashish Mahaur</div>
+                        <div class="timestamp ashish-time">Pre-Ratified & Ready</div>
+                    </div>
+                </div>
+
+                <div class="signature-block">
+                    <div class="sig-title">Party B: The Landscape Planner</div>
+                    <div style="margin: auto 0; display: flex; flex-direction: column; align-items: center;">
+                        
+                        <button id="affix-btn" onclick="affixSeal()">Touch to Affix Seal & Agree</button>
+                        
+                        <div class="official-signature megan-sig" id="megan-signature">Megan Bichotte</div>
+                        <div class="timestamp megan-time" id="signature-time"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="ratified-banner">
+                <h3>✔ CONTRACT OFFICIALLY EXECUTED</h3>
+                <p style="color: var(--stem-green); margin-top:10px; font-size: 0.9em; margin-bottom: 0;">
+                    <em>This contract is now legally binding in the courts of Geology and Botany. <br>Party B's seal has been permanently etched into this device's local memory!</em>
                 </p>
             </div>
         </div>
@@ -390,7 +423,7 @@
         function affixSeal() {
             // Get current date and time
             const now = new Date();
-            const timeString = now.toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
+            const timeString = now.toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' });
             
             // Save to Local Storage
             localStorage.setItem('megan_accords_sealed', 'true');
@@ -402,22 +435,23 @@
 
         function displaySeal(timeString, animate) {
             // Hide the button
-            document.getElementById('action-container').style.display = 'none';
-            
-            // Show the container
-            const ratifiedContainer = document.getElementById('ratified-container');
-            ratifiedContainer.style.display = 'block';
+            document.getElementById('affix-btn').style.display = 'none';
             
             // Set the text
             document.getElementById('signature-time').innerText = `Affixed: ${timeString}`;
+            
+            // Show the Ratified Banner
+            document.getElementById('ratified-banner').style.display = 'block';
             
             // Apply animations if this is a fresh click
             if (animate) {
                 document.getElementById('megan-signature').classList.add('stamp-animation');
                 document.getElementById('signature-time').classList.add('fade-in');
             } else {
-                // If loading from memory, just show it immediately
+                // If loading from memory, just show it immediately without animation
+                document.getElementById('megan-signature').style.display = 'block';
                 document.getElementById('megan-signature').style.opacity = '1';
+                document.getElementById('signature-time').style.display = 'block';
                 document.getElementById('signature-time').style.opacity = '1';
             }
         }
