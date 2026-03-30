@@ -68,10 +68,10 @@
         @media(min-width: 600px) { nav a { margin: 0 15px; font-size: 0.9em; } }
         nav a:hover { color: var(--neon-blue); }
         
-        /* Hero Section with PHOTO 1 */
+        /* Hero Section */
         .hero { 
             text-align: center; 
-            padding: 120px 20px 80px; 
+            padding: 100px 20px 60px; 
             background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(15, 28, 15, 0.95)), url('20260228_175737.jpg');
             background-size: cover;
             border-radius: 0 0 40px 40px; 
@@ -80,9 +80,9 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         
-        .hero-title-container { margin-bottom: 40px; }
+        .hero-title-container { margin-bottom: 20px; }
         .hero p.subtitle { font-size: 1.3em; color: var(--stem-green); max-width: 700px; margin: 10px auto; }
-        .celebration-date { font-size: 2.5em; color: var(--bloom-gold); font-weight: bold; margin-top: 10px; }
+        .celebration-date { font-size: 2.2em; color: var(--bloom-gold); font-weight: bold; margin-top: 10px; }
 
         .couple-photo-container {
             position: relative;
@@ -90,7 +90,7 @@
             border-radius: 50%;
             padding: 15px;
             border: 4px solid var(--neon-blue);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             box-shadow: 0 0 25px rgba(0,229,255, 0.6);
             overflow: hidden;
         }
@@ -104,6 +104,37 @@
             transition: transform 0.3s ease;
         }
         .couple-photo-container:hover img { transform: scale(1.03); }
+
+        /* Countdown Timer */
+        .countdown-wrapper {
+            background: rgba(15, 28, 15, 0.8);
+            border: 2px solid var(--neon-blue);
+            border-radius: 15px;
+            padding: 15px 25px;
+            display: inline-block;
+            margin-top: 20px;
+            box-shadow: 0 0 20px rgba(0,229,255, 0.3);
+        }
+        .countdown-wrapper h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        #countdown {
+            font-family: 'Oswald', sans-serif;
+            font-size: 2em;
+            color: var(--neon-blue);
+            letter-spacing: 2px;
+        }
+        .time-label {
+            font-size: 0.4em;
+            color: var(--stem-green);
+            vertical-align: middle;
+            margin-left: 2px;
+            margin-right: 8px;
+        }
 
         /* PHOTO 2 Section: The Close-up Clover */
         .botany-inspiration {
@@ -289,15 +320,8 @@
         }
         .timeline-item:hover::before { transform: scale(1.3); }
         
-        .timeline-item.birthday-point::before {
-            background: var(--bloom-gold);
-            box-shadow: 0 0 15px var(--bloom-gold);
-        }
-
-        .timeline-item.meeting-point::before {
-            background: var(--petal-purple);
-            box-shadow: 0 0 15px var(--petal-purple);
-        }
+        .timeline-item.birthday-point::before { background: var(--bloom-gold); box-shadow: 0 0 15px var(--bloom-gold); }
+        .timeline-item.meeting-point::before { background: var(--petal-purple); box-shadow: 0 0 15px var(--petal-purple); }
 
         .timeline-date { font-weight: bold; color: var(--stem-green); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
         .timeline-content { 
@@ -331,8 +355,17 @@
         <div class="hero-title-container">
             <h1>Our Collective Almanac of the Earth</h1>
             <p class="subtitle">Where Landscape Analysis Meets Geologic Harmony</p>
-            <p>Celebrating Her (Mar 31) and His (Apr 2)</p>
-            <div class="celebration-date">A Shared Orbit on April 1st!</div>
+            <div class="celebration-date">Celebrating Her (Mar 31) & His (Apr 2)</div>
+        </div>
+        
+        <div class="countdown-wrapper">
+            <h4>Countdown to our Shared April 1st Orbit</h4>
+            <div id="countdown">
+                <span id="cd-days">00</span><span class="time-label">D</span>:
+                <span id="cd-hours">00</span><span class="time-label">H</span>:
+                <span id="cd-minutes">00</span><span class="time-label">M</span>:
+                <span id="cd-seconds">00</span><span class="time-label">S</span>
+            </div>
         </div>
     </div>
 
@@ -359,30 +392,31 @@
 
         <h2 id="landscape-his">Earthly Dynamics</h2>
         <div class="stats-grid">
+            
+            <div class="stat-card red-card">
+                <div class="stat-icon" style="animation: pulse 1s infinite;">❤️</div>
+                <h3>Synchronized Beats</h3>
+                <div class="stat-value" id="heartbeats">0</div>
+                <div class="stat-desc">Total times our hearts have beaten since we were born, assuming an average resting rate. <strong>(Updating Live!)</strong></div>
+            </div>
+
             <div class="stat-card purple-card">
                 <div class="stat-icon">🌴</div>
                 <h3>Botanical Canopy</h3>
                 <div class="stat-value" id="treeGrowth">0 ft</div>
-                <div class="stat-desc">If a Royal Palm (specific to your WPB area) was planted on your birth year, it would be this tall today! (They grow over 4 feet per year in Florida!).</div>
-            </div>
-
-            <div class="stat-card red-card">
-                <div class="stat-icon">🪨</div>
-                <h3>Geological Drift</h3>
-                <div class="stat-value" id="tectonicDrift">0 cm</div>
-                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! Time creates the pressure to make diamonds, and perfect GIS precision on your maps.</div>
+                <div class="stat-desc">If a Royal Palm (specific to WPB) was planted on your birth year, it would be this tall today! (Growing ~4 feet per year).</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🌱</div>
-                <h3>Native Botanical Count</h3>
-                <div class="stat-value" id="speciesCount">~0</div>
-                <div class="stat-desc">A detailed estimation of total native plant species common specifically in your precise WPB ecosystem. Your planning can include Saw Palmetto and Sea Oats!</div>
+                <div class="stat-icon">🪨</div>
+                <h3>Geological Drift</h3>
+                <div class="stat-value" id="tectonicDrift">0 cm</div>
+                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! Time creates diamonds, and perfect GIS precision.</div>
             </div>
 
             <div class="stat-card">
                 <div class="stat-icon">🦶</div>
-                <h3>Paths Plotted Together</h3>
+                <h3>Paths Plotted</h3>
                 <div class="stat-value" id="sharedSteps">0</div>
                 <div class="stat-desc">A detailed calculation of total shared steps taken, assuming trails and city explorations based on a combined average!</div>
             </div>
@@ -420,7 +454,6 @@ http://googleusercontent.com/map_location_reference/1
                     <div class="timeline-date">March 31</div>
                     <div class="timeline-content">
                         <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, requiring meticulous urban landscape planning and site analysis to place a massive steel monument within an ancient city.
-                        <div class="timeline-subcontent">Today, you continue to build your own landscape legacy!</div>
                     </div>
                 </div>
 
@@ -435,24 +468,16 @@ http://googleusercontent.com/map_location_reference/1
                     <div class="timeline-date">April 2</div>
                     <div class="timeline-content">
                         <strong>Moon Rock Analysis (2014):</strong> A monumental day for ground-based geology. A significant study was released announcing the *precise dating* of lunar fossils based on tectonic evidence.
-                        <div class="timeline-subcontent">Today, you continue to analyze the foundations!</div>
                     </div>
                 </div>
 
                 <div class="timeline-item meeting-point">
                     <div class="timeline-date">December 2025</div>
                     <div class="timeline-content">
-                        <strong>The Most Important Site Survey:</strong> We met at the Morikami Museum and Japanese Gardens. Amidst the bamboo, koi ponds, and perfectly curated landscape design, two paths officially became one. The greatest mapping achievement yet!
+                        <strong>The Most Important Site Survey:</strong> We met at the Morikami Museum and Japanese Gardens. Amidst the bamboo, koi ponds, and perfectly curated landscape design, two paths officially became one.
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">1998</div>
-                    <div class="timeline-content">
-                        <strong>Eden Project UK Construction Begins:</strong> A definitive landscape standard! Planning and detailed site analysis required to build massive biomes in a defunct UK quarry begins.
-                    </div>
-                </div>
-                </div>
+            </div>
         </div>
     </div>
 
@@ -460,13 +485,23 @@ http://googleusercontent.com/map_location_reference/1
         Designed for a precise Landscape Planner, by her favorite Techie Geologist. <br>Our paths are now mapped, designed, and explored in unison. ❤️
     </div>
 
+    <style>
+        /* Pulse animation for the heart */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+    </style>
+
     <script>
+        // --- Static Stats ---
         function calculateStats() {
             let herYear = parseInt(document.getElementById('herYear').value) || 1998;
             let hisYear = parseInt(document.getElementById('hisYear').value) || 1995;
             
-            const herBday = new Date(`${herYear}-03-31T12:00:00`);
-            const hisBday = new Date(`${hisYear}-04-02T12:00:00`);
+            const herBday = new Date(`${herYear}-03-31T00:00:00`);
+            const hisBday = new Date(`${hisYear}-04-02T00:00:00`);
             const today = new Date();
 
             const msPerDay = 1000 * 60 * 60 * 24;
@@ -476,7 +511,6 @@ http://googleusercontent.com/map_location_reference/1
             
             const herAgePrecise = herDays / 365.2425; 
             const hisAgePrecise = hisDays / 365.2425;
-            const combinedAges = herAgePrecise + hisAgePrecise;
 
             const palmHeight = Math.floor(herAgePrecise * 4);
             document.getElementById('treeGrowth').innerText = `${palmHeight} ft`;
@@ -484,15 +518,72 @@ http://googleusercontent.com/map_location_reference/1
             const driftCm = (hisAgePrecise * 2.5).toFixed(1);
             document.getElementById('tectonicDrift').innerText = `${driftCm} cm`;
 
-            const estimatedSpecies = Math.floor(500 + (combinedAges * 3));
-            document.getElementById('speciesCount').innerText = `~${estimatedSpecies}`;
-
             const stepsTaken = Math.floor(totalCombinedDays * 3000);
             document.getElementById('sharedSteps').innerText = stepsTaken.toLocaleString();
         }
 
+        // --- Live Heartbeats (Updates every second) ---
+        function updateHeartbeats() {
+            let herYear = parseInt(document.getElementById('herYear').value) || 1998;
+            let hisYear = parseInt(document.getElementById('hisYear').value) || 1995;
+            
+            const herBday = new Date(`${herYear}-03-31T00:00:00`).getTime();
+            const hisBday = new Date(`${hisYear}-04-02T00:00:00`).getTime();
+            const now = new Date().getTime();
+
+            // Calculate exact milliseconds alive
+            const herMs = Math.max(0, now - herBday);
+            const hisMs = Math.max(0, now - hisBday);
+
+            // Average resting heart rate = 75 BPM.
+            // 75 beats per minute = 1.25 beats per second = 0.00125 beats per millisecond.
+            const bpmPerMs = 75 / 60000;
+            
+            const herBeats = herMs * bpmPerMs;
+            const hisBeats = hisMs * bpmPerMs;
+            
+            const totalBeats = Math.floor(herBeats + hisBeats);
+            
+            // Format with commas
+            document.getElementById('heartbeats').innerText = totalBeats.toLocaleString();
+        }
+
+        // --- Live Countdown to April 1st ---
+        function updateCountdown() {
+            const now = new Date();
+            let currentYear = now.getFullYear();
+            
+            // Target Date: April 1st of the current year
+            let targetDate = new Date(`${currentYear}-04-01T00:00:00`);
+
+            // If April 1st has already passed this year, set target to next year's April 1st
+            if (now > targetDate) {
+                targetDate = new Date(`${currentYear + 1}-04-01T00:00:00`);
+            }
+
+            const diff = targetDate - now;
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const m = Math.floor((diff / 1000 / 60) % 60);
+            const s = Math.floor((diff / 1000) % 60);
+
+            // Pad with leading zeros
+            document.getElementById('cd-days').innerText = d.toString().padStart(2, '0');
+            document.getElementById('cd-hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('cd-minutes').innerText = m.toString().padStart(2, '0');
+            document.getElementById('cd-seconds').innerText = s.toString().padStart(2, '0');
+        }
+
+        // Initialize on page load
         window.onload = function() {
             calculateStats();
+            updateHeartbeats();
+            updateCountdown();
+            
+            // Set intervals for live updates
+            setInterval(updateHeartbeats, 1000);
+            setInterval(updateCountdown, 1000);
         };
     </script>
 </body>
