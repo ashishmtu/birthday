@@ -38,45 +38,27 @@
         h2 { color: var(--bloom-gold); margin-top: 50px; border-bottom: 2px solid var(--stem-green); padding-bottom: 10px; display: inline-block; position: relative; left: 50%; transform: translateX(-50%); }
         h3 { color: var(--stem-green); }
         
-        .container { 
-            max-width: 1000px; 
-            margin: 0 auto; 
-            padding: 20px; 
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         
         /* Smooth Scrolling Header Navigation */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(15, 28, 15, 0.9);
-            padding: 10px 0;
-            z-index: 1000;
-            text-align: center;
-            border-bottom: 1px solid var(--neon-blue);
+            position: fixed; top: 0; left: 0; width: 100%;
+            background-color: rgba(15, 28, 15, 0.9); padding: 10px 0;
+            z-index: 1000; text-align: center; border-bottom: 1px solid var(--neon-blue);
         }
         nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 0.8em;
-            text-transform: uppercase;
-            font-weight: 600;
-            transition: color 0.3s;
+            color: var(--text-light); text-decoration: none; margin: 0 10px;
+            font-size: 0.8em; text-transform: uppercase; font-weight: 600; transition: color 0.3s;
         }
         @media(min-width: 600px) { nav a { margin: 0 15px; font-size: 0.9em; } }
         nav a:hover { color: var(--neon-blue); }
         
         /* Hero Section */
         .hero { 
-            text-align: center; 
-            padding: 100px 20px 60px; 
+            text-align: center; padding: 100px 20px 60px; 
             background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(15, 28, 15, 0.95)), url('20260228_175737.jpg');
-            background-size: cover;
-            border-radius: 0 0 40px 40px; 
-            border-bottom: 5px solid var(--stem-green); 
-            position: relative;
+            background-size: cover; border-radius: 0 0 40px 40px; 
+            border-bottom: 5px solid var(--stem-green); position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         
@@ -85,97 +67,33 @@
         .celebration-date { font-size: 2.2em; color: var(--bloom-gold); font-weight: bold; margin-top: 10px; }
 
         .couple-photo-container {
-            position: relative;
-            display: inline-block;
-            border-radius: 50%;
-            padding: 15px;
-            border: 4px solid var(--neon-blue);
-            margin-bottom: 20px;
-            box-shadow: 0 0 25px rgba(0,229,255, 0.6);
-            overflow: hidden;
+            position: relative; display: inline-block; border-radius: 50%; padding: 15px;
+            border: 4px solid var(--neon-blue); margin-bottom: 20px;
+            box-shadow: 0 0 25px rgba(0,229,255, 0.6); overflow: hidden;
         }
         .couple-photo-container img {
-            display: block;
-            border-radius: 50%;
-            max-width: 100%;
-            height: auto;
-            width: 320px; 
-            border: 4px solid var(--stem-green);
-            transition: transform 0.3s ease;
+            display: block; border-radius: 50%; max-width: 100%; height: auto;
+            width: 320px; border: 4px solid var(--stem-green); transition: transform 0.3s ease;
         }
         .couple-photo-container:hover img { transform: scale(1.03); }
 
         /* Shared Time Counter */
         .countdown-wrapper {
-            background: rgba(15, 28, 15, 0.8);
-            border: 2px solid var(--neon-blue);
-            border-radius: 15px;
-            padding: 15px 25px;
-            display: inline-block;
-            margin-top: 20px;
-            box-shadow: 0 0 20px rgba(0,229,255, 0.3);
+            background: rgba(15, 28, 15, 0.8); border: 2px solid var(--neon-blue);
+            border-radius: 15px; padding: 15px 25px; display: inline-block;
+            margin-top: 20px; box-shadow: 0 0 20px rgba(0,229,255, 0.3);
         }
         .countdown-wrapper h4 {
-            margin: 0 0 10px 0;
-            color: var(--text-light);
-            text-transform: uppercase;
-            font-size: 0.9em;
-            letter-spacing: 1px;
+            margin: 0 0 10px 0; color: var(--text-light); text-transform: uppercase;
+            font-size: 0.9em; letter-spacing: 1px;
         }
-        #countdown {
-            font-family: 'Oswald', sans-serif;
-            font-size: 2.2em;
-            color: var(--neon-blue);
-            letter-spacing: 2px;
-        }
-        .time-label {
-            font-size: 0.4em;
-            color: var(--stem-green);
-            vertical-align: middle;
-            margin-left: 4px;
-            margin-right: 12px;
-        }
-
-        /* PHOTO 2 Section: The Close-up Clover */
-        .botany-inspiration {
-            background-color: var(--earth-charcoal);
-            padding: 50px;
-            border-radius: 20px;
-            margin: 30px auto;
-            border: 3px solid var(--stem-green);
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            box-shadow: inset 0 0 40px rgba(0,0,0,0.7);
-        }
-        @media(min-width: 768px) { .botany-inspiration { flex-direction: row; text-align: left; } }
-        
-        .clover-photo {
-            flex-shrink: 0;
-            width: 250px;
-            height: 250px;
-            border-radius: 20px;
-            border: 5px solid var(--stem-green);
-            margin-bottom: 20px;
-            background-image: url('20260228_175737.jpg');
-            background-size: cover;
-            background-position: center;
-            transition: transform 0.3s ease;
-        }
-        @media(min-width: 768px) { .clover-photo { margin-bottom: 0; margin-right: 30px; } }
-        .botany-inspiration:hover .clover-photo { transform: scale(1.03); }
-        .botany-text h3 { color: var(--bloom-gold); margin-top: 0; }
-        .botany-text p { color: var(--text-light); opacity: 0.9; }
+        #countdown { font-family: 'Oswald', sans-serif; font-size: 2.2em; color: var(--neon-blue); letter-spacing: 2px; }
+        .time-label { font-size: 0.4em; color: var(--stem-green); vertical-align: middle; margin-left: 4px; margin-right: 12px; }
 
         /* Site Zero Section (Morikami) */
         .site-zero {
             background: linear-gradient(180deg, rgba(30, 30, 30, 0.95), var(--nocturnal-dark));
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 40px;
-            border: 2px solid var(--petal-purple);
-            text-align: center;
+            padding: 40px; border-radius: 20px; margin-top: 40px; border: 2px solid var(--petal-purple); text-align: center;
         }
         .site-zero-desc { font-size: 1.1em; color: var(--text-light); max-width: 800px; margin: 0 auto 30px; line-height: 1.8; }
         .gallery-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 30px; }
@@ -201,11 +119,8 @@
         .stat-desc { color: var(--text-light); font-size: 1em; opacity: 0.9; }
 
         .purple-card { border-top-color: var(--petal-purple); }
-        .purple-card:hover { border-top-color: var(--petal-purple); }
         .purple-card .stat-value { color: var(--petal-purple); }
-        
         .red-card { border-top-color: var(--petal-red); }
-        .red-card:hover { border-top-color: var(--petal-red); }
         .red-card .stat-value { color: var(--petal-red); }
 
         /* Timeline */
@@ -225,72 +140,69 @@
         .timeline-item.meeting-point .timeline-content { border-left-color: var(--petal-purple); }
         .timeline-content strong { color: var(--text-light); }
 
-        /* CONTRACT SECTION */
+        /* CONTRACT & SEAL SECTION */
         .contract-section {
-            background: rgba(30, 30, 30, 0.95);
-            padding: 40px;
-            border-radius: 20px;
-            margin-top: 50px;
-            border: 3px dashed var(--bloom-gold);
-            text-align: center;
+            background: rgba(30, 30, 30, 0.95); padding: 40px; border-radius: 20px;
+            margin-top: 50px; border: 3px dashed var(--bloom-gold); text-align: center;
             box-shadow: 0 15px 40px rgba(0,0,0,0.8);
         }
         .contract-text {
-            text-align: left;
-            font-size: 1em;
-            line-height: 1.8;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: rgba(15, 28, 15, 0.8);
-            border-left: 4px solid var(--neon-blue);
-            border-radius: 10px;
+            text-align: left; font-size: 1em; line-height: 1.8; margin-bottom: 30px;
+            padding: 20px; background: rgba(15, 28, 15, 0.8);
+            border-left: 4px solid var(--neon-blue); border-radius: 10px;
         }
         .contract-text li { margin-bottom: 10px; }
         
-        #signature-pad-container { display: block; }
-        canvas {
-            border: 2px solid var(--stem-green);
-            border-radius: 10px;
-            background: #fff;
-            cursor: crosshair;
-            touch-action: none; /* Prevents scrolling while signing on mobile */
-            width: 100%;
-            max-width: 500px;
-            height: 150px;
+        /* The Button */
+        #affix-btn {
+            padding: 15px 30px; font-size: 1.2em; font-weight: bold;
+            background-color: var(--bloom-gold); color: var(--nocturnal-dark);
+            border: none; border-radius: 8px; cursor: pointer;
+            transition: 0.3s; font-family: 'Montserrat', sans-serif;
+            box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
         }
-        .btn-group { margin-top: 15px; }
-        button {
-            padding: 12px 25px;
-            font-size: 1.1em;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            margin: 5px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .btn-clear { background-color: var(--earth-charcoal); color: var(--text-light); border: 2px solid var(--stem-green); }
-        .btn-clear:hover { background-color: var(--stem-green); color: var(--nocturnal-dark); }
-        .btn-sign { background-color: var(--bloom-gold); color: var(--nocturnal-dark); }
-        .btn-sign:hover { background-color: var(--neon-blue); transform: scale(1.05); }
+        #affix-btn:hover { background-color: var(--neon-blue); transform: scale(1.05); }
 
+        /* The Ratified Seal */
         #ratified-container {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            border: 2px solid var(--stem-green);
-            border-radius: 10px;
-            background: rgba(15, 28, 15, 0.9);
+            display: none; margin-top: 20px; padding: 30px;
+            border: 2px solid var(--stem-green); border-radius: 15px;
+            background: rgba(15, 28, 15, 0.9); position: relative;
+            overflow: hidden;
         }
-        #ratified-container h3 { color: var(--neon-blue); font-size: 1.8em; margin: 0 0 15px 0; letter-spacing: 2px; }
-        #saved-signature { max-width: 100%; height: auto; background: #fff; border-radius: 5px; padding: 5px; }
+        #ratified-container h3 { color: var(--stem-green); font-size: 1.5em; margin: 0 0 15px 0; letter-spacing: 2px; }
+        
+        /* The Stylized Signature */
+        .official-signature {
+            font-family: 'Dancing Script', cursive; /* The cursive handwriting font */
+            font-size: 4em;
+            color: var(--bloom-gold);
+            transform: rotate(-5deg); /* Slight angle for realism */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            margin: 20px 0;
+            opacity: 0;
+        }
+        
+        .timestamp {
+            font-family: monospace; color: var(--neon-blue);
+            font-size: 0.9em; margin-top: 10px; opacity: 0;
+        }
+
+        /* The Stamp Animation */
+        .stamp-animation {
+            animation: stampIn 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+        @keyframes stampIn {
+            0% { opacity: 0; transform: scale(3) rotate(-20deg); }
+            100% { opacity: 1; transform: scale(1) rotate(-5deg); }
+        }
+        .fade-in { animation: fadeIn 1s ease 0.5s forwards; }
+        @keyframes fadeIn { to { opacity: 1; } }
 
         .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--earth-charcoal); color: var(--stem-green); font-size: 1em; }
-        
         @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -321,10 +233,6 @@
     </div>
 
     <div class="container">
-        
-        <input type="hidden" id="herYear" value="1998">
-        <input type="hidden" id="hisYear" value="1995">
-
         <h2 id="landscape-his">Earthly Dynamics</h2>
         <div class="stats-grid">
             <div class="stat-card red-card">
@@ -407,28 +315,28 @@
         <div class="contract-section">
             <div class="contract-text">
                 <strong>TERMS AND CONDITIONS OF ALIGNMENT:</strong><br><br>
-                This binding resolution dictates the rules of engagement for the entities known as "The Techie Geologist" (Party A) and "The Landscape Planner" (Party B). By affixing a signature below, Party B agrees to the following:
+                This binding resolution dictates the rules of engagement for the entities known as "The Techie Geologist" (Party A) and "The Landscape Planner" (Party B). By affixing the Digital Seal below, Party B formally agrees to the following:
                 <ul>
                     <li>Party B's Solar Return (March 31) and Party A's Solar Return (April 2) shall henceforth be mathematically averaged.</li>
                     <li>The designated official Celebration Zone is permanently mandated as <strong>April 1st</strong>.</li>
                     <li>Despite external calendars labeling this date "April Fools' Day," any jokes regarding the legitimacy of this celebration are strictly prohibited and will result in a penalty of buying the other party extra coffee/plants.</li>
                     <li>Both parties agree to continue mapping, planning, and exploring the Earth together.</li>
                 </ul>
-                <em>Sign below to ratify this agreement into the permanent digital landscape.</em>
+                <em>By touching the button below, you permanently affix your seal to this digital landscape.</em>
             </div>
 
-            <div id="signature-pad-container">
-                <canvas id="sigCanvas"></canvas>
-                <div class="btn-group">
-                    <button class="btn-clear" onclick="clearCanvas()">Clear</button>
-                    <button class="btn-sign" onclick="saveSignature()">I Agree & Sign</button>
-                </div>
+            <div id="action-container">
+                <button id="affix-btn" onclick="affixSeal()">Touch to Affix Seal & Agree</button>
             </div>
 
             <div id="ratified-container">
                 <h3>✔ OFFICIALLY RATIFIED</h3>
-                <img id="saved-signature" alt="Your Saved Signature">
-                <p style="color: var(--bloom-gold); margin-top:15px;"><em>This contract is now legally binding in the courts of Geology and Botany. Your signature has been saved to this device's local memory!</em></p>
+                <div class="official-signature" id="megan-signature">Megan Bichotte</div>
+                <div class="timestamp" id="signature-time"></div>
+                
+                <p style="color: var(--stem-green); margin-top:20px; font-size: 0.9em;">
+                    <em>This contract is now legally binding in the courts of Geology and Botany. <br>This seal has been permanently etched into this device's local memory!</em>
+                </p>
             </div>
         </div>
     </div>
@@ -478,83 +386,50 @@
             document.getElementById('cd-seconds').innerText = Math.floor((diff / 1000) % 60).toString().padStart(2, '0');
         }
 
-        // --- Signature Pad Logic ---
-        const canvas = document.getElementById('sigCanvas');
-        const ctx = canvas.getContext('2d');
-        let isDrawing = false;
-
-        // Resize canvas correctly
-        function resizeCanvas() {
-            canvas.width = canvas.offsetWidth;
-            canvas.height = canvas.offsetHeight;
-            ctx.strokeStyle = "#0f1c0f"; // Dark ink
-            ctx.lineWidth = 3;
-            ctx.lineCap = "round";
+        // --- Digital Seal Logic ---
+        function affixSeal() {
+            // Get current date and time
+            const now = new Date();
+            const timeString = now.toLocaleString('en-US', { dateStyle: 'full', timeStyle: 'short' });
+            
+            // Save to Local Storage
+            localStorage.setItem('megan_accords_sealed', 'true');
+            localStorage.setItem('megan_accords_timestamp', timeString);
+            
+            // Trigger UI update with animation
+            displaySeal(timeString, true);
         }
 
-        function startPosition(e) {
-            isDrawing = true;
-            draw(e);
-        }
-
-        function endPosition() {
-            isDrawing = false;
-            ctx.beginPath();
-        }
-
-        function draw(e) {
-            if (!isDrawing) return;
-            e.preventDefault(); // Prevent scrolling on touch
-
-            let x, y;
-            if (e.type.includes('touch')) {
-                const rect = canvas.getBoundingClientRect();
-                x = e.touches[0].clientX - rect.left;
-                y = e.touches[0].clientY - rect.top;
+        function displaySeal(timeString, animate) {
+            // Hide the button
+            document.getElementById('action-container').style.display = 'none';
+            
+            // Show the container
+            const ratifiedContainer = document.getElementById('ratified-container');
+            ratifiedContainer.style.display = 'block';
+            
+            // Set the text
+            document.getElementById('signature-time').innerText = `Affixed: ${timeString}`;
+            
+            // Apply animations if this is a fresh click
+            if (animate) {
+                document.getElementById('megan-signature').classList.add('stamp-animation');
+                document.getElementById('signature-time').classList.add('fade-in');
             } else {
-                x = e.offsetX;
-                y = e.offsetY;
+                // If loading from memory, just show it immediately
+                document.getElementById('megan-signature').style.opacity = '1';
+                document.getElementById('signature-time').style.opacity = '1';
             }
-
-            ctx.lineTo(x, y);
-            ctx.stroke();
-            ctx.beginPath();
-            ctx.moveTo(x, y);
         }
 
-        // Mouse Events
-        canvas.addEventListener('mousedown', startPosition);
-        canvas.addEventListener('mouseup', endPosition);
-        canvas.addEventListener('mousemove', draw);
-        canvas.addEventListener('mouseout', endPosition);
-
-        // Touch Events for Mobile
-        canvas.addEventListener('touchstart', startPosition, {passive: false});
-        canvas.addEventListener('touchend', endPosition);
-        canvas.addEventListener('touchmove', draw, {passive: false});
-
-        function clearCanvas() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-        }
-
-        function saveSignature() {
-            const dataURL = canvas.toDataURL(); // Get image data
-            localStorage.setItem('april1_agreement_signature', dataURL); // Save locally
-            showRatified(dataURL);
-        }
-
-        function showRatified(dataURL) {
-            document.getElementById('signature-pad-container').style.display = 'none';
-            document.getElementById('saved-signature').src = dataURL;
-            document.getElementById('ratified-container').style.display = 'block';
-        }
-
-        function checkExistingSignature() {
-            const savedSig = localStorage.getItem('april1_agreement_signature');
-            if (savedSig) {
-                showRatified(savedSig);
-            } else {
-                resizeCanvas();
+        function checkExistingSeal() {
+            // Check browser memory to see if she already signed it
+            const isSealed = localStorage.getItem('megan_accords_sealed');
+            const savedTime = localStorage.getItem('megan_accords_timestamp');
+            
+            if (isSealed === 'true' && savedTime) {
+                // It was already signed previously, load the seal without animation
+                displaySeal(savedTime, false);
             }
         }
 
@@ -563,17 +438,10 @@
             calculateStats();
             updateHeartbeats();
             updateSharedTime();
-            checkExistingSignature();
+            checkExistingSeal(); // Check memory on load
             
             setInterval(updateHeartbeats, 1000);
             setInterval(updateSharedTime, 1000);
-        };
-        
-        window.onresize = function() {
-            // Only resize if they haven't signed yet to avoid wiping canvas accidentally
-            if (!localStorage.getItem('april1_agreement_signature')) {
-                resizeCanvas();
-            }
         };
     </script>
 </body>
