@@ -3,273 +3,660 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>31 + 2 = 1 | Our Cosmic & Earthly Journey</title>
+    <title>31+2=1 | Our Cosmic & Earthly Almanac</title>
     <style>
         /* CSS Reset & Variables */
         :root {
-            --space-dark: #0b0c10;
-            --space-light: #1f2833;
-            --earth-green: #45a29e;
-            --neon-blue: #66fcf1;
-            --text-light: #c5c6c7;
-            --accent-gold: #f39c12;
+            --space-dark: #0a0e1b;
+            --space-light: #162a4a;
+            --earth-green-dark: #2c5a2c;
+            --earth-green-light: #6aa84f;
+            --petal-purple: #9b4dca;
+            --petal-red: #d32f2f;
+            --neon-blue: #00e5ff;
+            --accent-gold: #ffd700;
+            --text-light: #f1f1f1;
+            --text-dark: #333;
         }
         
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; scroll-behavior: smooth; }
         
         body { 
             margin: 0; 
-            font-family: 'Segoe UI', system-ui, sans-serif; 
-            background: var(--space-dark); 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--space-dark); 
+            background-image: linear-gradient(rgba(10, 14, 27, 0.93), rgba(10, 14, 27, 0.93)), url('image_0.png');
+            background-repeat: repeat;
+            background-position: center;
+            background-size: initial;
             color: var(--text-light); 
-            line-height: 1.6; 
+            line-height: 1.7; 
             overflow-x: hidden; 
         }
 
-        h1, h2, h3 { color: var(--neon-blue); text-align: center; }
+        h1, h2, h3 { font-family: 'Oswald', sans-serif; font-weight: 700; text-align: center; }
+        h1 { color: var(--neon-blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0; }
+        h2 { color: var(--accent-gold); margin-top: 50px; border-bottom: 2px solid var(--earth-green-light); padding-bottom: 10px; display: inline-block; position: relative; left: 50%; transform: translateX(-50%); }
+        h3 { color: var(--earth-green-light); }
         
         .container { 
-            max-width: 900px; 
+            max-width: 1000px; 
             margin: 0 auto; 
             padding: 20px; 
         }
         
-        /* Hero Section */
+        /* Smooth Scrolling Header Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(10, 14, 27, 0.9);
+            padding: 10px 0;
+            z-index: 1000;
+            text-align: center;
+            border-bottom: 1px solid var(--neon-blue);
+        }
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--neon-blue); }
+        
+        /* Hero Section with Photo */
         .hero { 
             text-align: center; 
-            padding: 60px 20px 80px; 
-            background: linear-gradient(135deg, var(--space-light) 0%, var(--space-dark) 100%); 
+            padding: 120px 20px 80px; /* Increased top padding for nav */
+            background: linear-gradient(135deg, rgba(22, 42, 74, 0.9), rgba(10, 14, 27, 0.9)), url('image_0.png');
+            background-size: cover;
             border-radius: 0 0 40px 40px; 
-            border-bottom: 4px solid var(--earth-green); 
+            border-bottom: 5px solid var(--earth-green-light); 
             position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
         
-        .hero h1 { font-size: 2.8em; margin-bottom: 10px; letter-spacing: 2px; }
-        .hero p { font-size: 1.2em; color: var(--earth-green); max-width: 600px; margin: 0 auto; }
+        .hero-title-container {
+            margin-bottom: 40px;
+        }
+        .hero p.subtitle { font-size: 1.3em; color: var(--earth-green-light); max-width: 700px; margin: 10px auto; }
+        .celebration-date { font-size: 2.5em; color: var(--accent-gold); font-weight: bold; margin-top: 10px; }
+
+        .couple-photo-container {
+            position: relative;
+            display: inline-block;
+            border-radius: 50%;
+            padding: 15px;
+            border: 4px solid var(--neon-blue);
+            margin-bottom: 30px;
+            box-shadow: 0 0 25px rgba(0,229,255, 0.6);
+            overflow: hidden;
+        }
+        .couple-photo-container img {
+            display: block;
+            border-radius: 50%;
+            max-width: 100%;
+            height: auto;
+            width: 320px; /* Specific width */
+            border: 4px solid var(--earth-green-light);
+            transition: transform 0.3s ease;
+        }
+        .couple-photo-container:hover img {
+            transform: scale(1.03);
+        }
 
         /* Interactive Controls */
         .controls { 
             display: flex; 
             flex-direction: column; 
             gap: 20px; 
-            background: var(--space-light); 
+            background: rgba(22, 42, 74, 0.9);
             padding: 30px; 
             border-radius: 20px; 
-            margin: -40px auto 0; 
-            max-width: 600px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            margin: -40px auto 30px; 
+            max-width: 650px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
             position: relative;
             z-index: 10;
+            border: 2px solid var(--earth-green-light);
         }
         @media(min-width: 600px) { .controls { flex-direction: row; justify-content: space-around; } }
         
         .input-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .input-group label { font-weight: bold; color: var(--neon-blue); margin-bottom: 8px;}
+        .input-group label { font-weight: bold; color: var(--accent-gold); margin-bottom: 8px;}
         input[type="number"] { 
-            width: 100px; 
-            padding: 10px; 
-            border-radius: 10px; 
-            border: 2px solid var(--earth-green); 
+            width: 120px; 
+            padding: 12px; 
+            border-radius: 12px; 
+            border: 2px solid var(--earth-green-light); 
             background: var(--space-dark); 
             color: var(--neon-blue); 
-            font-size: 1.2em; 
+            font-size: 1.4em; 
             text-align: center; 
             outline: none;
             transition: border-color 0.3s;
         }
         input[type="number"]:focus { border-color: var(--neon-blue); }
 
-        /* Stats Grid */
+        /* General Section Styling */
+        .full-width-section { margin-top: 70px; }
+        
+        /* Stats Grid - Expanded */
         .stats-grid { 
             display: grid; 
             grid-template-columns: 1fr; 
-            gap: 20px; 
-            margin-top: 50px; 
+            gap: 25px; 
         }
         @media(min-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
         
         .stat-card { 
-            background: var(--space-light); 
-            padding: 30px; 
+            background: rgba(22, 42, 74, 0.95);
+            padding: 35px; 
             border-radius: 20px; 
             text-align: center; 
-            border-top: 4px solid var(--earth-green); 
-            transition: transform 0.3s, box-shadow 0.3s; 
+            border-top: 5px solid var(--earth-green-light); 
+            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
+            cursor: default;
         }
         .stat-card:hover { 
             transform: translateY(-8px); 
-            box-shadow: 0 10px 25px rgba(102, 252, 241, 0.1);
+            box-shadow: 0 10px 30px rgba(0,229,255, 0.15);
+            border-top-color: var(--neon-blue);
         }
-        .stat-icon { font-size: 3em; margin-bottom: 15px; }
-        .stat-value { font-size: 2.2em; font-weight: bold; color: var(--neon-blue); margin: 10px 0; }
-        .stat-desc { color: var(--text-light); font-size: 0.95em; }
+        .stat-icon { font-size: 3.5em; margin-bottom: 15px; display: inline-block; transition: transform 0.3s; }
+        .stat-card:hover .stat-icon { transform: rotate(10deg); }
+        .stat-value { font-size: 2.8em; font-weight: bold; color: var(--neon-blue); margin: 10px 0; }
+        .stat-desc { color: var(--text-light); font-size: 1em; opacity: 0.9; }
 
-        /* Timeline */
-        .timeline-section { margin-top: 60px; }
-        .timeline { position: relative; padding-left: 30px; margin-top: 30px; }
+        /* Custom Petal Color Cards */
+        .purple-card { border-top-color: var(--petal-purple); }
+        .purple-card:hover { border-top-color: var(--petal-purple); box-shadow: 0 10px 30px rgba(155, 77, 202, 0.2); }
+        .purple-card .stat-value { color: var(--petal-purple); }
+        
+        .red-card { border-top-color: var(--petal-red); }
+        .red-card:hover { border-top-color: var(--petal-red); box-shadow: 0 10px 30px rgba(211, 47, 47, 0.2); }
+        .red-card .stat-value { color: var(--petal-red); }
+
+        /* Timeline - Significantly Expanded */
+        .timeline-section { margin-top: 100px; }
+        .timeline { position: relative; padding-left: 35px; margin-top: 30px; margin-bottom: 100px; }
         .timeline::before { 
             content: ''; 
             position: absolute; 
-            left: 10px; 
+            left: 12px; 
             top: 0; 
             bottom: 0; 
-            width: 4px; 
-            background: var(--earth-green); 
-            border-radius: 2px; 
+            width: 5px; 
+            background: var(--earth-green-light); 
+            border-radius: 3px; 
         }
-        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item { margin-bottom: 50px; position: relative; opacity: 0.9; transition: opacity 0.3s; }
+        .timeline-item:hover { opacity: 1; }
         .timeline-item::before { 
             content: ''; 
             position: absolute; 
-            left: -28px; 
-            top: 5px; 
-            width: 16px; 
-            height: 16px; 
+            left: -33px; 
+            top: 8px; 
+            width: 20px; 
+            height: 20px; 
             border-radius: 50%; 
             background: var(--neon-blue); 
+            border: 4px solid var(--space-dark);
             box-shadow: 0 0 15px var(--neon-blue); 
+            transition: transform 0.3s;
         }
-        .timeline-date { font-weight: bold; color: var(--earth-green); font-size: 1.3em; margin-bottom: 10px; }
-        .timeline-content { 
-            background: var(--space-light); 
-            padding: 20px; 
-            border-radius: 15px; 
-            border-left: 4px solid var(--neon-blue);
-        }
+        .timeline-item:hover::before { transform: scale(1.3); }
         
-        .footer { text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid var(--space-light); color: var(--earth-green); font-size: 0.9em; }
+        .timeline-item.birthday-point::before {
+            background: var(--accent-gold);
+            box-shadow: 0 0 15px var(--accent-gold);
+        }
+
+        .timeline-date { font-weight: bold; color: var(--earth-green-light); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
+        .timeline-content { 
+            background: rgba(22, 42, 74, 0.9); 
+            padding: 25px; 
+            border-radius: 18px; 
+            border-left: 5px solid var(--neon-blue);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+        }
+        .timeline-content strong { color: var(--text-light); }
+        .timeline-subcontent { color: var(--accent-gold); margin-top: 10px; font-style: italic; }
+
+        /* Map Section */
+        #geospatial-map {
+            background-color: var(--space-light);
+            height: 400px;
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 3px solid var(--earth-green-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-size: 1.5em;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        #geospatial-map::after {
+            content: "Interactive Combined Miles Traveled Arc (Simplified GIS Visualization)";
+            position: absolute;
+            font-size: 0.7em;
+            color: var(--text-light);
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Footer */
+        .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--space-light); color: var(--earth-green-light); font-size: 1em; }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <div class="hero">
-        <h1>31 + 2 = 1</h1>
-        <p>You're the Landscape to my Geology. <br>Celebrating March 31st and April 2nd together on April 1st!</p>
+    <nav>
+        <a href="#hero">Start</a>
+        <a href="#landscape-his">Stats I</a>
+        <a href="#cosmic-travels">Stats II</a>
+        <a href="#almanac">Almanac</a>
+    </nav>
+
+    <div class="hero" id="hero">
+        <div class="couple-photo-container">
+            <img src="image_1.png" alt="Our Picture Together">
+        }
+        </div>
+        <div class="hero-title-container">
+            <h1>Our Personal Planetary Alignment</h1>
+            <p class="subtitle">Where Landscape Design Meets Geologic Time</p>
+            <p>Celebrating Her (Mar 31) and His (Apr 2)</p>
+            <div class="celebration-date">Combined on April 1st!</div>
+        </div>
     </div>
 
     <div class="container">
         <div class="controls">
             <div class="input-group">
-                <label>Her Birth Year (Mar 31)</label>
-                <input type="number" id="herYear" value="1995" oninput="calculateStats()">
+                <label>Her Birth Year (1998 set)</label>
+                <input type="number" id="herYear" value="1998" oninput="calculateStats()">
             </div>
             <div class="input-group">
-                <label>His Birth Year (Apr 2)</label>
+                <label>His Birth Year (1995 set)</label>
                 <input type="number" id="hisYear" value="1995" oninput="calculateStats()">
             </div>
         </div>
 
+        <h2 id="landscape-his">Earthly Dynamics</h2>
         <div class="stats-grid">
             
-            <div class="stat-card">
+            <div class="stat-card purple-card">
                 <div class="stat-icon">🌱</div>
                 <h3>Landscape & Growth</h3>
                 <div class="stat-value" id="treeGrowth">0 ft</div>
-                <div class="stat-desc">If a Giant Sequoia was planted on your birth year, it would be this tall today! (They grow ~2 feet per year).</div>
+                <div class="stat-desc">If a Giant Sequoia was planted on your birth year, it would be this tall today! Also, if you’d focused on Royal Palms (common in your area), they’d grow over <span id="palmGrowth" style="color:var(--petal-purple); font-weight:bold;">0</span> feet tall!</div>
             </div>
 
-            <div class="stat-card">
+            <div class="stat-card red-card">
                 <div class="stat-icon">🪨</div>
                 <h3>Geological Drift</h3>
                 <div class="stat-value" id="tectonicDrift">0 cm</div>
-                <div class="stat-desc">Since we were born, the Earth's tectonic plates have shifted this far! Pressure creates diamonds, and time creates perfect GIS maps.</div>
+                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! The pressure from this creates diamonds, but your GIS map shows it as perfect precision.</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🚀</div>
-                <h3>Space Travel</h3>
-                <div class="stat-value" id="spaceMiles">0</div>
-                <div class="stat-desc">Miles we've traveled through space as the Earth orbits the Sun at 67,000 mph. We are truly cosmic voyagers.</div>
+                <div class="stat-icon">🌴</div>
+                <h3>Native Botanical Count</h3>
+                <div class="stat-value" id="speciesCount">~0</div>
+                <div class="stat-desc">A conservative estimate of total native plant species common in your precise WPB area. Your planning can include Sea Oats, Saw Palmetto, and beautiful local Palms!</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🐕</div>
-                <h3>Travels & Tails</h3>
+                <div class="stat-icon">🐾</div>
+                <h3>Pet-tential Energy</h3>
                 <div class="stat-value" id="dogYears">0</div>
-                <div class="stat-desc">Our combined age in Dog Years! Also, if we started walking from West Palm Beach when we were born, we'd have circled the globe <span id="globeLaps" style="color:var(--neon-blue); font-weight:bold;">0</span> times.</div>
+                <div class="stat-desc">Our combined age in Dog Years! If we kept a running log, we'd have estimated we’ve encountered over <span id="petsMet" style="color:var(--neon-blue); font-weight:bold;">0</span> pets during our travels!</div>
             </div>
-            
         </div>
 
-        <div class="timeline-section">
-            <h2>The Cosmic Timeline</h2>
-            <div class="timeline">
-                
-                <div class="timeline-item">
-                    <div class="timeline-date">March 31: Her Day</div>
-                    <div class="timeline-content">
-                        <strong>A Milestone in Landscape Integration:</strong> On March 31, 1889, the Eiffel Tower was officially inaugurated. A true marvel of architectural and landscape planning that changed a city's skyline forever!
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">April 1: Our Celebration</div>
-                    <div class="timeline-content">
-                        <strong>The Barycenter:</strong> In astrophysics, the barycenter is the center of mass around which two bodies orbit. April 1st is the exact center of gravity for our birthdays. No jokes today, just an orbit of love!
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">April 2: His Day</div>
-                    <div class="timeline-content">
-                        <strong>The Geologic Clock:</strong> On April 2, an international team of planetary scientists established the "geologic clock" to finally date the exact age of the Moon's formation. A massive day for space geologists!
-                    </div>
-                </div>
-
+        <h2 id="cosmic-travels">Cosmic Voyager</h2>
+        <div class="stats-grid">
+            
+            <div class="stat-card red-card">
+                <div class="stat-icon">☀️</div>
+                <h3>Orbits of the Sun</h3>
+                <div class="stat-value" id="sunOrbits">0</div>
+                <div class="stat-desc">Total complete revolutions our combined selves have made around the sun. We are truly celestial sailors.</div>
             </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🛰️</div>
+                <h3>Our Distance Travelled</h3>
+                <div class="stat-value" id="spaceMiles">0</div>
+                <div class="stat-desc">Miles we've traveled *together* as a combined mass, orbiting the Sun at 67,000 mph! We are a formidable cosmic duo.</div>
+            </div>
+        </div>
+        
+        <h2 id="geospatial-travels">Geospatial Travel Arc</h2>
+        <div id="geospatial-map">
+            <div id="map-visualization-text">Map visualizing simplified combined travel distances...</div>
+        </div>
+
+        <h2 id="almanac">The Cosmic Almanac</h2>
+        <div class="timeline-section">
+            <div class="timeline" id="expandedTimeline">
+                
+                <div class="timeline-item birthday-point">
+                    <div class="timeline-date">March 31</div>
+                    <div class="timeline-content">
+                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, a structure that forever changed Paris. It required meticulous urban landscape planning to place a massive steel monument within an ancient city. Your world in miniature!
+                        <div class="timeline-subcontent">Today, you continue to build your own landscape legacy!</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item birthday-point">
+                    <div class="timeline-date">April 1: The Alignment</div>
+                    <div class="timeline-content">
+                        <strong>Cosmic Center (Our Day):</strong> No jokes. In astrophysics, the barycenter is the precise point around which two celestial bodies orbit. April 1st is the *exact barycenter* of our combined birthdays. We are perfectly locked in orbit!
+                    </div>
+                </div>
+
+                <div class="timeline-item birthday-point">
+                    <div class="timeline-date">April 2</div>
+                    <div class="timeline-content">
+                        <strong>Moon's Geologic Clock (2014):</strong> A massive day in space geology. International scientists established the precise "clock" to date the Moon's formation, defining its geologic epoch. A GIS triumph!
+                        <div class="timeline-subcontent">Today, you continue to map your own geospatial journey!</div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1998</div>
+                    <div class="timeline-content">
+                        <strong>Google Inc. Founded:</strong> A techie milestone! Larry Page and Sergey Brin founded Google, changing the very definition of finding information. This tech revolution now supports your GIS software and landscape databases!
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">1999</div>
+                    <div class="timeline-content">
+                        <strong>Mars Rover 'Spirit' and 'Opportunity' (Tech/Space/Geology):</strong> While we were children, these rovers were paving the way for future *space* geologists. A combined win for technology, exploration, and identifying perfect sites!
+                    </div>
+                </div>
+
+                </div>
         </div>
     </div>
 
     <div class="footer">
-        Designed by a Techie Geologist for his favorite Landscape Planner. ❤️
+        Designed for a specific Landscape Planner, by her favorite Techie Geologist. <br>Our paths are now mapped in unison. ❤️
     </div>
 
     <script>
         function calculateStats() {
-            // Get years from input
-            const herYear = document.getElementById('herYear').value || 1995;
-            const hisYear = document.getElementById('hisYear').value || 1995;
+            // Get years from input, ensuring they are valid numbers
+            let herYear = parseInt(document.getElementById('herYear').value) || 1998;
+            let hisYear = parseInt(document.getElementById('hisYear').value) || 1995;
             
-            // Create Date objects
-            const herBday = new Date(`${herYear}-03-31T00:00:00`);
-            const hisBday = new Date(`${hisYear}-04-02T00:00:00`);
+            // Create Date objects (Assuming same time for simplicity)
+            const herBday = new Date(`${herYear}-03-31T12:00:00`);
+            const hisBday = new Date(`${hisYear}-04-02T12:00:00`);
             const today = new Date();
 
-            // Calculate exact days alive
+            // Calculate precise days alive
             const msPerDay = 1000 * 60 * 60 * 24;
             const herDays = Math.max(0, Math.floor((today - herBday) / msPerDay));
             const hisDays = Math.max(0, Math.floor((today - hisBday) / msPerDay));
-            const totalDays = herDays + hisDays;
+            const totalCombinedDays = herDays + hisDays;
             
-            // Calculate Ages
-            const herAge = herDays / 365.25;
-            const hisAge = hisDays / 365.25;
+            // Calculate Ages precisely
+            const herAgePrecise = herDays / 365.2425; // More precise year
+            const hisAgePrecise = hisDays / 365.2425;
+            const combinedAges = herAgePrecise + hisAgePrecise;
 
-            // 1. Landscape Growth (Sequoias grow ~2 ft a year)
-            const treeHeight = Math.floor(herAge * 2);
+            // --- Section 1: Landscape & Earth ---
+
+            // 1. Landscape Growth (Sequoias grow ~2-3 ft a year. Let's use 2.5ft)
+            const treeHeight = Math.floor(herAgePrecise * 2.5);
             document.getElementById('treeGrowth').innerText = `${treeHeight} ft`;
 
-            // 2. Tectonic Drift (Plates move ~2.5 cm a year on average)
-            const drift = (hisAge * 2.5).toFixed(1);
-            document.getElementById('tectonicDrift').innerText = `${drift} cm`;
+            // Royal Palms grow faster, ~4ft/yr in ideal Florida conditions
+            const palmHeight = Math.floor(herAgePrecise * 4);
+            document.getElementById('palmGrowth').innerText = `${palmHeight}`;
 
-            // 3. Space Miles (Earth moves ~1.6 million miles a day around the sun)
-            // Using total days combined to show a massive number
-            const spaceTravel = Math.floor(totalDays * 1600000).toLocaleString();
-            document.getElementById('spaceMiles').innerText = spaceTravel;
+            // 2. Tectonic Drift (Plates move between 2-10 cm a year. Avg is 2.5cm/yr)
+            const driftCm = (hisAgePrecise * 2.5).toFixed(1);
+            document.getElementById('tectonicDrift').innerText = `${driftCm} cm`;
 
-            // 4. Travel & Pets
-            const combinedDogYears = Math.floor((herAge + hisAge) * 7);
+            // 3. Native Botanical Species Count (Specific WPB context, very loose estimate)
+            // Palm Beach County has ~1000 native species. Let's make it a scale based on combined age.
+            const estimatedSpecies = Math.floor(500 + (combinedAges * 3));
+            document.getElementById('speciesCount').innerText = `~${estimatedSpecies}`;
+
+            // 4. Pet-tential
+            // Combined Dog Years
+            const combinedDogYears = Math.floor(combinedAges * 7);
             document.getElementById('dogYears').innerText = `${combinedDogYears} yrs`;
+            
+            // Estimates on Pets Met (Assuming ~10 pets/year encountered traveling)
+            const estimatedPetsMet = Math.floor(combinedAges * 10);
+            document.getElementById('petsMet').innerText = `${estimatedPetsMet}`;
 
-            // Globe laps (Avg person walks ~3 miles a day. Earth circumference is 24,901 miles)
-            const combinedMilesWalked = totalDays * 3; 
-            const laps = (combinedMilesWalked / 24901).toFixed(1);
-            document.getElementById('globeLaps').innerText = laps;
+            // --- Section 2: Space & Travels ---
+
+            // 1. Orbits of the Sun (Total complete orbits combined)
+            const sunOrbits = Math.floor(herAgePrecise) + Math.floor(hisAgePrecise);
+            document.getElementById('sunOrbits').innerText = `${sunOrbits}`;
+
+            // 2. Space Miles (Earth moves ~1.6 million miles a day)
+            // Using a *combined* travel distance. This is a staggering number.
+            const totalSpaceMiles = Math.floor(totalCombinedDays * 1600000);
+            const formattedMiles = totalSpaceMiles.toLocaleString();
+            document.getElementById('spaceMiles').innerText = formattedMiles;
+
+            // --- Update Timeline (only needs to run once, but can be forced here too) ---
+            //populateExpandedTimeline(herYear, hisYear); 
+        }
+
+        // Expanded timeline population
+        function populateExpandedTimeline(herYear, hisYear) {
+            const timeline = document.getElementById('expandedTimeline');
+            
+            // Sample facts from years (This can be a large JSON object for real production)
+            const yearFacts = {
+                1998: {
+                    event: "Google Inc. Founded:",
+                    desc: "Larry Page and Sergey Brin founded Google, changing information and data mapping forever. A techie legend begins!",
+                    sub: "Supporting GIS software and database research for years to come."
+                },
+                1999: {
+                    event: "Mars Rovers 'Spirit' and 'Opportunity':",
+                    desc: "While we were tiny, these rovers land on Mars to begin the planet's detailed *geologic* and GIS mapping. Tech, Space, and site-selection!",
+                    sub: "Future planetary landscape analysis!"
+                },
+                2000: {
+                    event: "Harry Potter and the Goblet of Fire Released:",
+                    desc: "The global phenomenon grows! The landscape of popular children's literature changes. Imagine the meticulous world-building planning.",
+                    sub: "Mapping complex fictional geographies!"
+                },
+                2001: {
+                    event: "Wikipedia Launched:",
+                    desc: "A massive decentralized information network. Perfect for geospatial and landscape research data collection. The definition of detailed data sets.",
+                    sub: "Building a collective global knowledge map!"
+                },
+                2002: {
+                    event: "The Euro Currency Introduced:",
+                    desc: "A significant geometric, economic, and design challenge. Imagine the GIS involved in integrating a new monetary zone across a diverse landscape!",
+                    sub: "A geospatial approach to financial systems."
+                },
+                2003: {
+                    event: "Human Genome Project Completed:",
+                    desc: "Mapping the building blocks of life. Complex, recursive, and an epic spatial mapping triumph in the smallest dimension!",
+                    sub: "Applying geospatial analysis principles to biology."
+                },
+                2004: {
+                    event: "Facebook Founded (The 'Techie' Milestone):",
+                    desc: "Mark Zuckerberg founds Facebook, a social graph that maps human connection. A different kind of GIS (Global Information System).",
+                    sub: "Mapping personal landscape connections."
+                },
+                2005: {
+                    event: "YouTube Launched:",
+                    desc: "A tech/media revolution, allowing travel vlogs, space documentation, and pet videos to reach a global audience instantly!",
+                    sub: "The perfect GIS tool for recording *moving* data."
+                },
+                2006: {
+                    event: "Pluto Demoted to 'Dwarf Planet' (The 'Space' Challenge):",
+                    desc: "A re-mapping of our celestial understanding. Definitions change, and our space GIS models must adapt. A cosmic data update!",
+                    sub: "The ever-evolving landscape of our solar system."
+                },
+                2007: {
+                    event: "First iPhone Released (A true 'Techie' icon):",
+                    desc: "Steve Jobs unviels the iPhone, placing a massive geospatial data mapping tool in every pocket. GPS for landscape planning in real-time!",
+                    sub: "The GIS tool you can't live without."
+                },
+                2008: {
+                    event: "Barack Obama Elected (A political landscape shift):",
+                    desc: "A historic US election that redrew political GIS maps. A detailed and precise campaign operation, reliant on demographic data.",
+                    sub: "Mapping human behavior and political topography."
+                },
+                2009: {
+                    event: "Bitcoin Born (Mapping a new digital geography):",
+                    desc: "Satoshi Nakamoto releases the Bitcoin whitepaper. A decentralized ledger, mapping an entire digital landscape of value without a physical site!",
+                    sub: "Geospatial concepts for a purely digital world."
+                },
+                2010: {
+                    event: "Instagram Launched (A *landscape* visual standard):",
+                    desc: "A visual mapping of personal travels and aesthetics. For a landscape planner, a constant source of inspiration and site recording.",
+                    sub: "The ultimate visual recording of global sites."
+                },
+                2011: {
+                    event: "Snapchat Launched (The ephemeral data mapping):",
+                    desc: "Mapping immediate, non-persistent moments. Another GIS type: time-series data of temporary landscape usage!",
+                    sub: "The temporary topography of experience."
+                },
+                2012: {
+                    event: "Curiosity Rover Lands on Mars (Geology/Space):",
+                    desc: "Curiosity lands! This incredible technical feat allowed space geologists to analyze rocks up close. Imagine the GIS models required for precise landing and rover site selection.",
+                    sub: "Future planetary GIS triumphs!"
+                },
+                2013: {
+                    event: "Voyager 1 Leaves Solar System (The ultimate *Space* trip):",
+                    desc: "The farthest object from Earth. A techie's dream: sending a probe with primitive technology (by today's standards) that still maps its trajectory after 35+ years!",
+                    sub: "The final frontier for geospatial analysis."
+                },
+                2014: {
+                    event: "Moon's Geologic Clock Established (Geology/Space):",
+                    desc: "International scientists established the precise 'clock' to date the Moon's formation. A definitive day for space geologists!",
+                    sub: "GIS used to date an entire satellite's epoch."
+                },
+                2015: {
+                    event: "New Horizons Probe Passes Pluto (Space Triumphs):",
+                    desc: "The first detailed mapping of Pluto. A techie/space triumph, transforming our visual understanding of this dwarf landscape. What detailed site analysis potential!",
+                    sub: "Redrawing the far-flung maps."
+                },
+                2016: {
+                    event: "Pokémon GO Global Craze (Interactive Landscape/Tech):",
+                    desc: "The integration of digital data onto a physical landscape map. A massive case study for how technology can reshape how people use public spaces!",
+                    sub: "The real-world application of interactive GIS and design."
+                },
+                2017: {
+                    event: "Total Solar Eclipse Across North America (Space event):",
+                    desc: "A geometric, cosmic alignment! A rare opportunity for solar GIS mapping and visual site recording. Think of the perfect viewing spot selection.",
+                    sub: "Mapping celestial geometries to physical locations."
+                },
+                2018: {
+                    event: "Meghan Markle Marries Prince Harry (A landscape standard):",
+                    desc: "The global focus on meticulous garden design and event planning on a historical site. Visual site planning at its finest!",
+                    sub: "A definitive landscape standard for event planning and spatial usage."
+                },
+                2019: {
+                    event: "First Image of a Black Hole Captured (Space/Techie):",
+                    desc: "A theoretical data concept is visualized. A triumph of data integration and computational GIS: processing vast data sets from across the globe to map *nothingness*!",
+                    sub: "Geospatial analysis on a cosmic scale."
+                },
+                2020: {
+                    event: "COVID-19 Pandemic Remote Work Era (Techie shift):",
+                    desc: "A seismic tech/spatial shift. We begin to map entire landscapes of activity in virtual spaces, as traditional GIS usage patterns for transport and commuting are redefined.",
+                    sub: "Mapping the immediate geography of virtual spaces."
+                },
+                2021: {
+                    event: "Perseverance Rover Lands on Mars (Geology/Space/Techie):",
+                    desc: "Lands! Continues the Mars mission with an incredible techie feat: a drone helicopter ('Ingenuity'). The precision of Mars geologic site selection is unparalleled!",
+                    sub: "The GIS standard for extra-planetary site selection."
+                },
+                2022: {
+                    event: "Elon Musk Buys Twitter (rebranded as X) (Tech/Geospatial):",
+                    desc: "A massive tech acquisition. A redefining of a data landscape and information topography on a global digital map.",
+                    sub: "Mapping information and behavioral topography."
+                },
+                2023: {
+                    event: "Chandrayaan-3 Lands on the Moon (Space/Geology):",
+                    desc: "India’s mission successfully lands, specifically targeting the South Pole. An incredible GIS and technical triumph for precise, extra-planetary site planning on a challenging lunar landscape.",
+                    sub: "The GIS standard for difficult landing zone navigation."
+                },
+                2024: {
+                    event: "Total Solar Eclipse Across North America (Space event):",
+                    desc: "A geometric, cosmic alignment! A rare opportunity for solar GIS mapping and visual site recording. Think of the perfect viewing spot selection and detailed site analysis required!",
+                    sub: "Mapping celestial geometries to physical locations."
+                }
+                // (More facts could be added)
+            };
+
+            // Remove any existing non-birthday points
+            const existingPoints = timeline.querySelectorAll('.timeline-item:not(.birthday-point)');
+            existingPoints.forEach(p => p.remove());
+
+            // Build new timeline entries based on her birth year
+            let currentYear = today.getFullYear();
+            let startYear = herYear; // Begin timeline from her birth year (1998 set)
+
+            for (let y = startYear; y <= currentYear; y++) {
+                if (yearFacts[y]) {
+                    // Create main timeline item
+                    const item = document.createElement('div');
+                    item.className = 'timeline-item';
+
+                    // Year div
+                    const dateDiv = document.createElement('div');
+                    dateDiv.className = 'timeline-date';
+                    dateDiv.innerText = `${y}`;
+                    item.appendChild(dateDiv);
+
+                    // Content div
+                    const contentDiv = document.createElement('div');
+                    contentDiv.className = 'timeline-content';
+                    
+                    const strong = document.createElement('strong');
+                    strong.innerText = `${yearFacts[y].event} `;
+                    contentDiv.appendChild(strong);
+                    
+                    contentDiv.appendChild(document.createTextNode(yearFacts[y].desc));
+                    
+                    if(yearFacts[y].sub) {
+                        const subcontent = document.createElement('div');
+                        subcontent.className = 'timeline-subcontent';
+                        subcontent.innerText = yearFacts[y].sub;
+                        contentDiv.appendChild(subcontent);
+                    }
+                    item.appendChild(contentDiv);
+
+                    // Insert after her birthday entry (which is already there)
+                    const bdayPoints = timeline.querySelectorAll('.birthday-point');
+                    const lastBday = bdayPoints[bdayPoints.length - 1];
+                    timeline.appendChild(item); // Append at end for chronological order
+                }
+            }
         }
 
         // Initialize calculations on page load
-        window.onload = calculateStats;
+        window.onload = function() {
+            calculateStats();
+            populateExpandedTimeline(1998, 1995); // Assuming these defaults are set
+        };
     </script>
 </body>
 </html>
