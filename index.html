@@ -3,199 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>31.01.02 | Megan & Ashish</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <title>31 + 2 = 1 | Our Cosmic & Earthly Journey</title>
     <style>
+        /* CSS Reset & Variables */
         :root {
-            --flora: #2d6a4f; /* Megan's Plant Green */
-            --terra: #7e4e2b; /* Geology Brown */
-            --cosmos: #1a1a2e; /* Space Blue */
-            --accent: #ff9f1c; /* Sun/Star Gold */
-            --text: #f8f9fa;
+            --space-dark: #0b0c10;
+            --space-light: #1f2833;
+            --earth-green: #45a29e;
+            --neon-blue: #66fcf1;
+            --text-light: #c5c6c7;
+            --accent-gold: #f39c12;
         }
-
-        body {
-            background-color: var(--cosmos);
-            color: var(--text);
-            font-family: 'Space+Grotesk', sans-serif;
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Hero Section */
-        header {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(to bottom, #000000, var(--cosmos));
-            padding: 20px;
-        }
-
-        h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); margin: 0; }
-        .subtitle { letter-spacing: 5px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
-
-        /* Section Styling */
-        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
         
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 30px;
-            border-left: 5px solid var(--flora);
-            transition: 0.3s;
-        }
-        .card.him { border-left-color: var(--accent); }
-
-        /* Interactive Stats */
-        .stat-banner {
-            background: white;
-            color: black;
-            padding: 40px;
-            border-radius: 30px;
-            text-align: center;
-            margin: 40px 0;
-        }
-        .stat-val { font-size: 2.5rem; font-weight: 700; display: block; color: var(--flora); }
-
-        /* Imagery */
-        .img-box {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            margin-bottom: 20px;
+        * { box-sizing: border-box; }
+        
+        body { 
+            margin: 0; 
+            font-family: 'Segoe UI', system-ui, sans-serif; 
+            background: var(--space-dark); 
+            color: var(--text-light); 
+            line-height: 1.6; 
+            overflow-x: hidden; 
         }
 
-        /* Floating Pets/Travel Icons */
-        .shared-interests {
-            text-align: center;
-            background: var(--flora);
-            padding: 60px 20px;
-            border-radius: 50% 50% 0 0;
+        h1, h2, h3 { color: var(--neon-blue); text-align: center; }
+        
+        .container { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 20px; 
         }
+        
+        /* Hero Section */
+        .hero { 
+            text-align: center; 
+            padding: 60px 20px 80px; 
+            background: linear-gradient(135deg, var(--space-light) 0%, var(--space-dark) 100%); 
+            border-radius: 0 0 40px 40px; 
+            border-bottom: 4px solid var(--earth-green); 
+            position: relative;
+        }
+        
+        .hero h1 { font-size: 2.8em; margin-bottom: 10px; letter-spacing: 2px; }
+        .hero p { font-size: 1.2em; color: var(--earth-green); max-width: 600px; margin: 0 auto; }
 
-        .floating-icon { font-size: 3rem; margin: 0 20px; display: inline-block; animation: float 3s ease-in-out infinite; }
-        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        /* Interactive Controls */
+        .controls { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            background: var(--space-light); 
+            padding: 30px; 
+            border-radius: 20px; 
+            margin: -40px auto 0; 
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+            position: relative;
+            z-index: 10;
+        }
+        @media(min-width: 600px) { .controls { flex-direction: row; justify-content: space-around; } }
+        
+        .input-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
+        .input-group label { font-weight: bold; color: var(--neon-blue); margin-bottom: 8px;}
+        input[type="number"] { 
+            width: 100px; 
+            padding: 10px; 
+            border-radius: 10px; 
+            border: 2px solid var(--earth-green); 
+            background: var(--space-dark); 
+            color: var(--neon-blue); 
+            font-size: 1.2em; 
+            text-align: center; 
+            outline: none;
+            transition: border-color 0.3s;
+        }
+        input[type="number"]:focus { border-color: var(--neon-blue); }
 
-        footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; }
+        /* Stats Grid */
+        .stats-grid { 
+            display: grid; 
+            grid-template-columns: 1fr; 
+            gap: 20px; 
+            margin-top: 50px; 
+        }
+        @media(min-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
+        
+        .stat-card { 
+            background: var(--space-light); 
+            padding: 30px; 
+            border-radius: 20px; 
+            text-align: center; 
+            border-top: 4px solid var(--earth-green); 
+            transition: transform 0.3s, box-shadow 0.3s; 
+        }
+        .stat-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 25px rgba(102, 252, 241, 0.1);
+        }
+        .stat-icon { font-size: 3em; margin-bottom: 15px; }
+        .stat-value { font-size: 2.2em; font-weight: bold; color: var(--neon-blue); margin: 10px 0; }
+        .stat-desc { color: var(--text-light); font-size: 0.95em; }
+
+        /* Timeline */
+        .timeline-section { margin-top: 60px; }
+        .timeline { position: relative; padding-left: 30px; margin-top: 30px; }
+        .timeline::before { 
+            content: ''; 
+            position: absolute; 
+            left: 10px; 
+            top: 0; 
+            bottom: 0; 
+            width: 4px; 
+            background: var(--earth-green); 
+            border-radius: 2px; 
+        }
+        .timeline-item { margin-bottom: 40px; position: relative; }
+        .timeline-item::before { 
+            content: ''; 
+            position: absolute; 
+            left: -28px; 
+            top: 5px; 
+            width: 16px; 
+            height: 16px; 
+            border-radius: 50%; 
+            background: var(--neon-blue); 
+            box-shadow: 0 0 15px var(--neon-blue); 
+        }
+        .timeline-date { font-weight: bold; color: var(--earth-green); font-size: 1.3em; margin-bottom: 10px; }
+        .timeline-content { 
+            background: var(--space-light); 
+            padding: 20px; 
+            border-radius: 15px; 
+            border-left: 4px solid var(--neon-blue);
+        }
+        
+        .footer { text-align: center; padding: 40px; margin-top: 40px; border-top: 1px solid var(--space-light); color: var(--earth-green); font-size: 0.9em; }
     </style>
 </head>
 <body>
 
-<header>
-    <div class="subtitle">The Earth & The Stars</div>
-    <h1>31 . 01 . 02</h1>
-    <p>Two lives, 48 hours apart, orbiting each other perfectly.</p>
-    <p style="margin-top: 50px; opacity: 0.7;">Scroll to explore the timeline ↓</p>
-</header>
+    <div class="hero">
+        <h1>31 + 2 = 1</h1>
+        <p>You're the Landscape to my Geology. <br>Celebrating March 31st and April 2nd together on April 1st!</p>
+    </div>
 
-<section id="megan">
-    <h2 style="color: var(--flora); font-family: 'Playfair Display';">March 31: The Landscape Architect</h2>
-    <p>The day the world got a little greener.</p>
-    
-    <div class="grid">
-        <div class="card">
-            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80')"></div>
-            <h3>Nature in Design</h3>
-            <p>On this day in 1889, the <strong>Eiffel Tower</strong> was inaugurated—a marvel of structural planning. Just like your work, it proves that great design stands the test of time.</p>
+    <div class="container">
+        <div class="controls">
+            <div class="input-group">
+                <label>Her Birth Year (Mar 31)</label>
+                <input type="number" id="herYear" value="1995" oninput="calculateStats()">
+            </div>
+            <div class="input-group">
+                <label>His Birth Year (Apr 2)</label>
+                <input type="number" id="hisYear" value="1995" oninput="calculateStats()">
+            </div>
         </div>
-        <div class="card">
-            <h3>Botanical Fact</h3>
-            <p>By March 31st, the <strong>Cherry Blossoms (Sakura)</strong> in Japan are typically reaching their "Mankai" (full bloom). A reminder of our trip and your love for all things that grow.</p>
+
+        <div class="stats-grid">
+            
+            <div class="stat-card">
+                <div class="stat-icon">🌱</div>
+                <h3>Landscape & Growth</h3>
+                <div class="stat-value" id="treeGrowth">0 ft</div>
+                <div class="stat-desc">If a Giant Sequoia was planted on your birth year, it would be this tall today! (They grow ~2 feet per year).</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🪨</div>
+                <h3>Geological Drift</h3>
+                <div class="stat-value" id="tectonicDrift">0 cm</div>
+                <div class="stat-desc">Since we were born, the Earth's tectonic plates have shifted this far! Pressure creates diamonds, and time creates perfect GIS maps.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🚀</div>
+                <h3>Space Travel</h3>
+                <div class="stat-value" id="spaceMiles">0</div>
+                <div class="stat-desc">Miles we've traveled through space as the Earth orbits the Sun at 67,000 mph. We are truly cosmic voyagers.</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon">🐕</div>
+                <h3>Travels & Tails</h3>
+                <div class="stat-value" id="dogYears">0</div>
+                <div class="stat-desc">Our combined age in Dog Years! Also, if we started walking from West Palm Beach when we were born, we'd have circled the globe <span id="globeLaps" style="color:var(--neon-blue); font-weight:bold;">0</span> times.</div>
+            </div>
+            
+        </div>
+
+        <div class="timeline-section">
+            <h2>The Cosmic Timeline</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">March 31: Her Day</div>
+                    <div class="timeline-content">
+                        <strong>A Milestone in Landscape Integration:</strong> On March 31, 1889, the Eiffel Tower was officially inaugurated. A true marvel of architectural and landscape planning that changed a city's skyline forever!
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">April 1: Our Celebration</div>
+                    <div class="timeline-content">
+                        <strong>The Barycenter:</strong> In astrophysics, the barycenter is the center of mass around which two bodies orbit. April 1st is the exact center of gravity for our birthdays. No jokes today, just an orbit of love!
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-date">April 2: His Day</div>
+                    <div class="timeline-content">
+                        <strong>The Geologic Clock:</strong> On April 2, an international team of planetary scientists established the "geologic clock" to finally date the exact age of the Moon's formation. A massive day for space geologists!
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
-    <div class="stat-banner">
-        <span class="stat-val" id="tree-height">...</span>
-        <label>Estimated height of a Redwood tree planted the day Megan was born.</label>
-    </div>
-</section>
-
-<section class="shared-interests">
-    <h2 style="color: white; font-family: 'Playfair Display';">April 1st: Our Shared Orbit</h2>
-    <div class="floating-icon">🐕</div>
-    <div class="floating-icon">✈️</div>
-    <div class="floating-icon">🐈</div>
-    <div class="floating-icon">🌍</div>
-    
-    <p style="max-width: 600px; margin: 20px auto; color: white;">
-        The day we celebrate <strong>us</strong>. Not quite March, not quite April, but the perfect bridge in between.
-    </p>
-
-    <div class="card" style="background: rgba(0,0,0,0.2); border: none; color: white;">
-        <h3>Travel Log: 2025-2026</h3>
-        <p>From the streets of <strong>Tokyo</strong> to the mountains of <strong>Denver</strong>, we've covered <strong>15,000+ miles</strong> together. Where to next?</p>
-    </div>
-</section>
-
-<section id="ashish">
-    <h2 style="color: var(--accent); font-family: 'Playfair Display'; text-align: right;">April 2: The Geospatialist</h2>
-    <p style="text-align: right;">Mapping the world and staring at the stars.</p>
-
-    <div class="grid">
-        <div class="card him">
-            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80')"></div>
-            <h3>The Father of GIS</h3>
-            <p>Born on April 2, 1527: <strong>Abraham Ortelius</strong>. He created the first modern atlas, the <em>Theatrum Orbis Terrarum</em>. Geospatial science literally started on your birthday.</p>
-        </div>
-        <div class="card him">
-            <h3>Cosmic Milestone</h3>
-            <p>On this day in 1845, the first ever <strong>photograph of the Sun</strong> was taken. Fitting for someone who captures the moon and the stars through a lens.</p>
-        </div>
+    <div class="footer">
+        Designed by a Techie Geologist for his favorite Landscape Planner. ❤️
     </div>
 
-    <div class="stat-banner" style="border-top: 5px solid var(--accent);">
-        <span class="stat-val" id="tectonic-move" style="color: var(--terra);">...</span>
-        <label>Distance the North American Tectonic Plate has shifted since Ashish was born.</label>
-    </div>
-</section>
+    <script>
+        function calculateStats() {
+            // Get years from input
+            const herYear = document.getElementById('herYear').value || 1995;
+            const hisYear = document.getElementById('hisYear').value || 1995;
+            
+            // Create Date objects
+            const herBday = new Date(`${herYear}-03-31T00:00:00`);
+            const hisBday = new Date(`${hisYear}-04-02T00:00:00`);
+            const today = new Date();
 
-<section>
-    <h2 style="text-align: center; font-family: 'Playfair Display';">Vintage 1995</h2>
-    <p style="text-align: center;">The year the world changed forever.</p>
-    <div class="grid">
-        <div class="card" style="text-align: center; border: none;">
-            <h1 style="font-size: 3rem;">💾</h1>
-            <p><strong>Windows 95</strong> was released, bringing the "Start" menu to the world.</p>
-        </div>
-        <div class="card" style="text-align: center; border: none;">
-            <h1 style="font-size: 3rem;">🦖</h1>
-            <p><strong>Toy Story</strong> became the first fully computer-animated feature film.</p>
-        </div>
-        <div class="card" style="text-align: center; border: none;">
-            <h1 style="font-size: 3rem;">🛰️</h1>
-            <p>The <strong>GPS system</strong> became fully operational. Ashish’s future career was born.</p>
-        </div>
-    </div>
-</section>
+            // Calculate exact days alive
+            const msPerDay = 1000 * 60 * 60 * 24;
+            const herDays = Math.max(0, Math.floor((today - herBday) / msPerDay));
+            const hisDays = Math.max(0, Math.floor((today - hisBday) / msPerDay));
+            const totalDays = herDays + hisDays;
+            
+            // Calculate Ages
+            const herAge = herDays / 365.25;
+            const hisAge = hisDays / 365.25;
 
-<footer>
-    <p>Hand-crafted for Megan & Ashish • Happy 31st Birthdays!</p>
-</footer>
+            // 1. Landscape Growth (Sequoias grow ~2 ft a year)
+            const treeHeight = Math.floor(herAge * 2);
+            document.getElementById('treeGrowth').innerText = `${treeHeight} ft`;
 
-<script>
-    const birthYear = 1995;
-    const currentYear = new Date().getFullYear();
-    const age = currentYear - birthYear;
+            // 2. Tectonic Drift (Plates move ~2.5 cm a year on average)
+            const drift = (hisAge * 2.5).toFixed(1);
+            document.getElementById('tectonicDrift').innerText = `${drift} cm`;
 
-    function updateDynamicStats() {
-        // Tectonic plate moves ~2.5cm per year
-        const tectonicDist = (age * 2.5).toFixed(1);
-        document.getElementById('tectonic-move').innerText = tectonicDist + " Centimeters";
+            // 3. Space Miles (Earth moves ~1.6 million miles a day around the sun)
+            // Using total days combined to show a massive number
+            const spaceTravel = Math.floor(totalDays * 1600000).toLocaleString();
+            document.getElementById('spaceMiles').innerText = spaceTravel;
 
-        // A Redwood grows ~2-3 feet per year
-        const treeHeight = (age * 2.5).toFixed(0);
-        document.getElementById('tree-height').innerText = treeHeight + " Feet Tall";
-    }
+            // 4. Travel & Pets
+            const combinedDogYears = Math.floor((herAge + hisAge) * 7);
+            document.getElementById('dogYears').innerText = `${combinedDogYears} yrs`;
 
-    updateDynamicStats();
-</script>
+            // Globe laps (Avg person walks ~3 miles a day. Earth circumference is 24,901 miles)
+            const combinedMilesWalked = totalDays * 3; 
+            const laps = (combinedMilesWalked / 24901).toFixed(1);
+            document.getElementById('globeLaps').innerText = laps;
+        }
 
+        // Initialize calculations on page load
+        window.onload = calculateStats;
+    </script>
 </body>
 </html>
