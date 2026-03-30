@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>31.01.02 | Megan & Ashish</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --flora: #2d6a4f; /* Megan's Plant Green */
+            --terra: #7e4e2b; /* Geology Brown */
+            --cosmos: #1a1a2e; /* Space Blue */
+            --accent: #ff9f1c; /* Sun/Star Gold */
+            --text: #f8f9fa;
+        }
+
+        body {
+            background-color: var(--cosmos);
+            color: var(--text);
+            font-family: 'Space+Grotesk', sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(to bottom, #000000, var(--cosmos));
+            padding: 20px;
+        }
+
+        h1 { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 6rem); margin: 0; }
+        .subtitle { letter-spacing: 5px; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+
+        /* Section Styling */
+        section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 30px;
+            border-left: 5px solid var(--flora);
+            transition: 0.3s;
+        }
+        .card.him { border-left-color: var(--accent); }
+
+        /* Interactive Stats */
+        .stat-banner {
+            background: white;
+            color: black;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .stat-val { font-size: 2.5rem; font-weight: 700; display: block; color: var(--flora); }
+
+        /* Imagery */
+        .img-box {
+            width: 100%;
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 15px;
+            margin-bottom: 20px;
+        }
+
+        /* Floating Pets/Travel Icons */
+        .shared-interests {
+            text-align: center;
+            background: var(--flora);
+            padding: 60px 20px;
+            border-radius: 50% 50% 0 0;
+        }
+
+        .floating-icon { font-size: 3rem; margin: 0 20px; display: inline-block; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        footer { text-align: center; padding: 40px; opacity: 0.6; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="subtitle">The Earth & The Stars</div>
+    <h1>31 . 01 . 02</h1>
+    <p>Two lives, 48 hours apart, orbiting each other perfectly.</p>
+    <p style="margin-top: 50px; opacity: 0.7;">Scroll to explore the timeline ↓</p>
+</header>
+
+<section id="megan">
+    <h2 style="color: var(--flora); font-family: 'Playfair Display';">March 31: The Landscape Architect</h2>
+    <p>The day the world got a little greener.</p>
+    
+    <div class="grid">
+        <div class="card">
+            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=600&q=80')"></div>
+            <h3>Nature in Design</h3>
+            <p>On this day in 1889, the <strong>Eiffel Tower</strong> was inaugurated—a marvel of structural planning. Just like your work, it proves that great design stands the test of time.</p>
+        </div>
+        <div class="card">
+            <h3>Botanical Fact</h3>
+            <p>By March 31st, the <strong>Cherry Blossoms (Sakura)</strong> in Japan are typically reaching their "Mankai" (full bloom). A reminder of our trip and your love for all things that grow.</p>
+        </div>
+    </div>
+
+    <div class="stat-banner">
+        <span class="stat-val" id="tree-height">...</span>
+        <label>Estimated height of a Redwood tree planted the day Megan was born.</label>
+    </div>
+</section>
+
+<section class="shared-interests">
+    <h2 style="color: white; font-family: 'Playfair Display';">April 1st: Our Shared Orbit</h2>
+    <div class="floating-icon">🐕</div>
+    <div class="floating-icon">✈️</div>
+    <div class="floating-icon">🐈</div>
+    <div class="floating-icon">🌍</div>
+    
+    <p style="max-width: 600px; margin: 20px auto; color: white;">
+        The day we celebrate <strong>us</strong>. Not quite March, not quite April, but the perfect bridge in between.
+    </p>
+
+    <div class="card" style="background: rgba(0,0,0,0.2); border: none; color: white;">
+        <h3>Travel Log: 2025-2026</h3>
+        <p>From the streets of <strong>Tokyo</strong> to the mountains of <strong>Denver</strong>, we've covered <strong>15,000+ miles</strong> together. Where to next?</p>
+    </div>
+</section>
+
+<section id="ashish">
+    <h2 style="color: var(--accent); font-family: 'Playfair Display'; text-align: right;">April 2: The Geospatialist</h2>
+    <p style="text-align: right;">Mapping the world and staring at the stars.</p>
+
+    <div class="grid">
+        <div class="card him">
+            <div class="img-box" style="background-image: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80')"></div>
+            <h3>The Father of GIS</h3>
+            <p>Born on April 2, 1527: <strong>Abraham Ortelius</strong>. He created the first modern atlas, the <em>Theatrum Orbis Terrarum</em>. Geospatial science literally started on your birthday.</p>
+        </div>
+        <div class="card him">
+            <h3>Cosmic Milestone</h3>
+            <p>On this day in 1845, the first ever <strong>photograph of the Sun</strong> was taken. Fitting for someone who captures the moon and the stars through a lens.</p>
+        </div>
+    </div>
+
+    <div class="stat-banner" style="border-top: 5px solid var(--accent);">
+        <span class="stat-val" id="tectonic-move" style="color: var(--terra);">...</span>
+        <label>Distance the North American Tectonic Plate has shifted since Ashish was born.</label>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align: center; font-family: 'Playfair Display';">Vintage 1995</h2>
+    <p style="text-align: center;">The year the world changed forever.</p>
+    <div class="grid">
+        <div class="card" style="text-align: center; border: none;">
+            <h1 style="font-size: 3rem;">💾</h1>
+            <p><strong>Windows 95</strong> was released, bringing the "Start" menu to the world.</p>
+        </div>
+        <div class="card" style="text-align: center; border: none;">
+            <h1 style="font-size: 3rem;">🦖</h1>
+            <p><strong>Toy Story</strong> became the first fully computer-animated feature film.</p>
+        </div>
+        <div class="card" style="text-align: center; border: none;">
+            <h1 style="font-size: 3rem;">🛰️</h1>
+            <p>The <strong>GPS system</strong> became fully operational. Ashish’s future career was born.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>Hand-crafted for Megan & Ashish • Happy 31st Birthdays!</p>
+</footer>
+
+<script>
+    const birthYear = 1995;
+    const currentYear = new Date().getFullYear();
+    const age = currentYear - birthYear;
+
+    function updateDynamicStats() {
+        // Tectonic plate moves ~2.5cm per year
+        const tectonicDist = (age * 2.5).toFixed(1);
+        document.getElementById('tectonic-move').innerText = tectonicDist + " Centimeters";
+
+        // A Redwood grows ~2-3 feet per year
+        const treeHeight = (age * 2.5).toFixed(0);
+        document.getElementById('tree-height').innerText = treeHeight + " Feet Tall";
+    }
+
+    updateDynamicStats();
+</script>
+
+</body>
+</html>
