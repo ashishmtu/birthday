@@ -3,18 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>31+2=1 | Our Cosmic & Earthly Almanac</title>
+    <title>31+2=1 | Our Collective Almanac of the Earth</title>
     <style>
-        /* CSS Reset & Variables */
+        /* CSS Reset & Variables - Revised Nocturnal Garden Aesthetic */
         :root {
-            --space-dark: #0a0e1b;
-            --space-light: #162a4a;
-            --earth-green-dark: #2c5a2c;
-            --earth-green-light: #6aa84f;
+            --nocturnal-dark: #0f1c0f; /* Deepest nocturnal green */
+            --earth-charcoal: #1e1e1e; /* Warm charcoal black */
             --petal-purple: #9b4dca;
             --petal-red: #d32f2f;
-            --neon-blue: #00e5ff;
-            --accent-gold: #ffd700;
+            --stem-green: #6aa84f;
+            --bloom-gold: #ffd700;
+            --neon-blue: #00e5ff; /* Kept for dynamic tech elements */
             --text-light: #f1f1f1;
             --text-dark: #333;
         }
@@ -24,8 +23,9 @@
         body { 
             margin: 0; 
             font-family: 'Montserrat', sans-serif; 
-            background-color: var(--space-dark); 
-            background-image: linear-gradient(rgba(10, 14, 27, 0.93), rgba(10, 14, 27, 0.93)), url('image_0.png');
+            background-color: var(--nocturnal-dark); 
+            /* Subtle clover texture across the whole site */
+            background-image: linear-gradient(rgba(15, 28, 15, 0.96), rgba(15, 28, 15, 0.96)), url('image_0.png');
             background-repeat: repeat;
             background-position: center;
             background-size: initial;
@@ -36,8 +36,8 @@
 
         h1, h2, h3 { font-family: 'Oswald', sans-serif; font-weight: 700; text-align: center; }
         h1 { color: var(--neon-blue); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0; }
-        h2 { color: var(--accent-gold); margin-top: 50px; border-bottom: 2px solid var(--earth-green-light); padding-bottom: 10px; display: inline-block; position: relative; left: 50%; transform: translateX(-50%); }
-        h3 { color: var(--earth-green-light); }
+        h2 { color: var(--bloom-gold); margin-top: 50px; border-bottom: 2px solid var(--stem-green); padding-bottom: 10px; display: inline-block; position: relative; left: 50%; transform: translateX(-50%); }
+        h3 { color: var(--stem-green); }
         
         .container { 
             max-width: 1000px; 
@@ -51,7 +51,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            background-color: rgba(10, 14, 27, 0.9);
+            background-color: rgba(15, 28, 15, 0.9);
             padding: 10px 0;
             z-index: 1000;
             text-align: center;
@@ -68,14 +68,14 @@
         }
         nav a:hover { color: var(--neon-blue); }
         
-        /* Hero Section with Photo */
+        /* Hero Section with Photo 1 */
         .hero { 
             text-align: center; 
             padding: 120px 20px 80px; /* Increased top padding for nav */
-            background: linear-gradient(135deg, rgba(22, 42, 74, 0.9), rgba(10, 14, 27, 0.9)), url('image_0.png');
+            background: linear-gradient(135deg, rgba(30, 30, 30, 0.95), rgba(15, 28, 15, 0.95)), url('image_0.png');
             background-size: cover;
             border-radius: 0 0 40px 40px; 
-            border-bottom: 5px solid var(--earth-green-light); 
+            border-bottom: 5px solid var(--stem-green); 
             position: relative;
             box-shadow: 0 10px 30px rgba(0,0,0,0.8);
         }
@@ -83,8 +83,8 @@
         .hero-title-container {
             margin-bottom: 40px;
         }
-        .hero p.subtitle { font-size: 1.3em; color: var(--earth-green-light); max-width: 700px; margin: 10px auto; }
-        .celebration-date { font-size: 2.5em; color: var(--accent-gold); font-weight: bold; margin-top: 10px; }
+        .hero p.subtitle { font-size: 1.3em; color: var(--stem-green); max-width: 700px; margin: 10px auto; }
+        .celebration-date { font-size: 2.5em; color: var(--bloom-gold); font-weight: bold; margin-top: 10px; }
 
         .couple-photo-container {
             position: relative;
@@ -102,19 +102,52 @@
             max-width: 100%;
             height: auto;
             width: 320px; /* Specific width */
-            border: 4px solid var(--earth-green-light);
+            border: 4px solid var(--stem-green);
             transition: transform 0.3s ease;
         }
         .couple-photo-container:hover img {
             transform: scale(1.03);
         }
 
+        /* PHOTO 2 Section: The Close-up Clover */
+        .botany-inspiration {
+            background-color: var(--earth-charcoal);
+            padding: 50px;
+            border-radius: 20px;
+            margin: 30px auto;
+            border: 3px solid var(--stem-green);
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            box-shadow: inset 0 0 40px rgba(0,0,0,0.7);
+        }
+        @media(min-width: 768px) { .botany-inspiration { flex-direction: row; text-align: left; } }
+        
+        .clover-photo {
+            flex-shrink: 0;
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            border: 5px solid var(--stem-green);
+            margin-bottom: 20px;
+            background-image: url('image_0.png');
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease;
+        }
+        @media(min-width: 768px) { .clover-photo { margin-bottom: 0; margin-right: 30px; } }
+        .botany-inspiration:hover .clover-photo { transform: scale(1.03); }
+
+        .botany-text h3 { color: var(--bloom-gold); margin-top: 0; }
+        .botany-text p { color: var(--text-light); opacity: 0.9; }
+
         /* Interactive Controls */
         .controls { 
             display: flex; 
             flex-direction: column; 
             gap: 20px; 
-            background: rgba(22, 42, 74, 0.9);
+            background: rgba(30, 30, 30, 0.95);
             padding: 30px; 
             border-radius: 20px; 
             margin: -40px auto 30px; 
@@ -122,18 +155,18 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.8); 
             position: relative;
             z-index: 10;
-            border: 2px solid var(--earth-green-light);
+            border: 2px solid var(--stem-green);
         }
         @media(min-width: 600px) { .controls { flex-direction: row; justify-content: space-around; } }
         
         .input-group { display: flex; flex-direction: column; align-items: center; width: 100%; }
-        .input-group label { font-weight: bold; color: var(--accent-gold); margin-bottom: 8px;}
+        .input-group label { font-weight: bold; color: var(--bloom-gold); margin-bottom: 8px;}
         input[type="number"] { 
             width: 120px; 
             padding: 12px; 
             border-radius: 12px; 
-            border: 2px solid var(--earth-green-light); 
-            background: var(--space-dark); 
+            border: 2px solid var(--stem-green); 
+            background: var(--nocturnal-dark); 
             color: var(--neon-blue); 
             font-size: 1.4em; 
             text-align: center; 
@@ -145,7 +178,7 @@
         /* General Section Styling */
         .full-width-section { margin-top: 70px; }
         
-        /* Stats Grid - Expanded */
+        /* Stats Grid - Revised for Exploration */
         .stats-grid { 
             display: grid; 
             grid-template-columns: 1fr; 
@@ -154,11 +187,11 @@
         @media(min-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; } }
         
         .stat-card { 
-            background: rgba(22, 42, 74, 0.95);
+            background: rgba(30, 30, 30, 0.95);
             padding: 35px; 
             border-radius: 20px; 
             text-align: center; 
-            border-top: 5px solid var(--earth-green-light); 
+            border-top: 5px solid var(--stem-green); 
             transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s; 
             cursor: default;
         }
@@ -181,7 +214,33 @@
         .red-card:hover { border-top-color: var(--petal-red); box-shadow: 0 10px 30px rgba(211, 47, 47, 0.2); }
         .red-card .stat-value { color: var(--petal-red); }
 
-        /* Timeline - Significantly Expanded */
+        /* Map Section - Simplified GIS Visualization */
+        #geospatial-map {
+            background-color: var(--earth-charcoal);
+            height: 400px;
+            width: 100%;
+            border-radius: 20px;
+            margin-top: 30px;
+            border: 3px solid var(--stem-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bloom-gold);
+            font-size: 1.5em;
+            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+            position: relative;
+        }
+        #geospatial-map::after {
+            content: "Simplified GIS Visualization of Our Shared Paths & Trail Density (Interactive coming soon!)";
+            position: absolute;
+            font-size: 0.7em;
+            color: var(--text-light);
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Timeline - Significantly Expanded, All Space Removed */
         .timeline-section { margin-top: 100px; }
         .timeline { position: relative; padding-left: 35px; margin-top: 30px; margin-bottom: 100px; }
         .timeline::before { 
@@ -191,7 +250,7 @@
             top: 0; 
             bottom: 0; 
             width: 5px; 
-            background: var(--earth-green-light); 
+            background: var(--stem-green); 
             border-radius: 3px; 
         }
         .timeline-item { margin-bottom: 50px; position: relative; opacity: 0.9; transition: opacity 0.3s; }
@@ -205,65 +264,39 @@
             height: 20px; 
             border-radius: 50%; 
             background: var(--neon-blue); 
-            border: 4px solid var(--space-dark);
+            border: 4px solid var(--nocturnal-dark);
             box-shadow: 0 0 15px var(--neon-blue); 
             transition: transform 0.3s;
         }
         .timeline-item:hover::before { transform: scale(1.3); }
         
         .timeline-item.birthday-point::before {
-            background: var(--accent-gold);
-            box-shadow: 0 0 15px var(--accent-gold);
+            background: var(--bloom-gold);
+            box-shadow: 0 0 15px var(--bloom-gold);
         }
 
-        .timeline-date { font-weight: bold; color: var(--earth-green-light); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
+        .timeline-date { font-weight: bold; color: var(--stem-green); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
         .timeline-content { 
-            background: rgba(22, 42, 74, 0.9); 
+            background: rgba(30, 30, 30, 0.95); 
             padding: 25px; 
             border-radius: 18px; 
             border-left: 5px solid var(--neon-blue);
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
         .timeline-content strong { color: var(--text-light); }
-        .timeline-subcontent { color: var(--accent-gold); margin-top: 10px; font-style: italic; }
-
-        /* Map Section */
-        #geospatial-map {
-            background-color: var(--space-light);
-            height: 400px;
-            width: 100%;
-            border-radius: 20px;
-            margin-top: 30px;
-            border: 3px solid var(--earth-green-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-gold);
-            font-size: 1.5em;
-            box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
-            position: relative;
-        }
-        #geospatial-map::after {
-            content: "Interactive Combined Miles Traveled Arc (Simplified GIS Visualization)";
-            position: absolute;
-            font-size: 0.7em;
-            color: var(--text-light);
-            bottom: 10px;
-            text-align: center;
-            width: 100%;
-        }
+        .timeline-subcontent { color: var(--bloom-gold); margin-top: 10px; font-style: italic; }
 
         /* Footer */
-        .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--space-light); color: var(--earth-green-light); font-size: 1em; }
+        .footer { text-align: center; padding: 60px; margin-top: 80px; border-top: 1px solid var(--earth-charcoal); color: var(--stem-green); font-size: 1em; }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav>
-        <a href="#hero">Start</a>
-        <a href="#landscape-his">Stats I</a>
-        <a href="#cosmic-travels">Stats II</a>
+        <a href="#hero">Our Pic</a>
+        <a href="#botany-focus">Her Image</a>
+        <a href="#landscape-his">Stats</a>
         <a href="#almanac">Almanac</a>
     </nav>
 
@@ -273,14 +306,23 @@
         }
         </div>
         <div class="hero-title-container">
-            <h1>Our Personal Planetary Alignment</h1>
-            <p class="subtitle">Where Landscape Design Meets Geologic Time</p>
+            <h1>Our Collective Almanac of the Earth</h1>
+            <p class="subtitle">Where Landscape Analysis Meets Geologic Harmony</p>
             <p>Celebrating Her (Mar 31) and His (Apr 2)</p>
-            <div class="celebration-date">Combined on April 1st!</div>
+            <div class="celebration-date">A Shared Orbit on April 1st!</div>
         </div>
     </div>
 
     <div class="container">
+        
+        <div class="botany-inspiration" id="botany-focus">
+            <div class="clover-photo"></div>
+            <div class="botany-text">
+                <h3>Inspired by Her Passion</h3>
+                <p>A detailed view of the natural geometry that inspires a landscape planner. The intricate patterns, the vibrant life, and the potential of every green space. This website balances your two unique worlds of design and earth science.</p>
+            </div>
+        </div>
+
         <div class="controls">
             <div class="input-group">
                 <label>Her Birth Year (1998 set)</label>
@@ -296,95 +338,88 @@
         <div class="stats-grid">
             
             <div class="stat-card purple-card">
-                <div class="stat-icon">🌱</div>
-                <h3>Landscape & Growth</h3>
+                <div class="stat-icon">🌴</div>
+                <h3>Botanical Canopy</h3>
                 <div class="stat-value" id="treeGrowth">0 ft</div>
-                <div class="stat-desc">If a Giant Sequoia was planted on your birth year, it would be this tall today! Also, if you’d focused on Royal Palms (common in your area), they’d grow over <span id="palmGrowth" style="color:var(--petal-purple); font-weight:bold;">0</span> feet tall!</div>
+                <div class="stat-desc">If a Royal Palm (specific to your WPB area) was planted on your birth year, it would be this tall today! (They grow over <span id="palmGrowth" style="color:var(--petal-purple); font-weight:bold;">0</span> feet per year in Florida!).</div>
             </div>
 
             <div class="stat-card red-card">
                 <div class="stat-icon">🪨</div>
                 <h3>Geological Drift</h3>
                 <div class="stat-value" id="tectonicDrift">0 cm</div>
-                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! The pressure from this creates diamonds, but your GIS map shows it as perfect precision.</div>
+                <div class="stat-desc">Since we were born, the Earth's plates have shifted this far! Time creates the pressure to make diamonds, and perfect GIS precision on your maps.</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🌴</div>
+                <div class="stat-icon">🌱</div>
                 <h3>Native Botanical Count</h3>
                 <div class="stat-value" id="speciesCount">~0</div>
-                <div class="stat-desc">A conservative estimate of total native plant species common in your precise WPB area. Your planning can include Sea Oats, Saw Palmetto, and beautiful local Palms!</div>
+                <div class="stat-desc">A detailed estimation of total native plant species common specifically in your precise WPB ecosystem. Your planning can include Saw Palmetto, Sea Oats, and stunning local Palms!</div>
             </div>
 
             <div class="stat-card">
-                <div class="stat-icon">🐾</div>
+                <div class="stat-icon">🐕</div>
                 <h3>Pet-tential Energy</h3>
                 <div class="stat-value" id="dogYears">0</div>
-                <div class="stat-desc">Our combined age in Dog Years! If we kept a running log, we'd have estimated we’ve encountered over <span id="petsMet" style="color:var(--neon-blue); font-weight:bold;">0</span> pets during our travels!</div>
+                <div class="stat-desc">Our combined age in Dog Years! Also, if we’d encounters over <span id="petsMet" style="color:var(--neon-blue); font-weight:bold;">0</span> pets during our travels based on a detailed encounter-ratio!</div>
             </div>
         </div>
 
-        <h2 id="cosmic-travels">Cosmic Voyager</h2>
+        <h2 id="geospatial-travels">Explorations & Geospatial</h2>
         <div class="stats-grid">
             
-            <div class="stat-card red-card">
-                <div class="stat-icon">☀️</div>
-                <h3>Orbits of the Sun</h3>
-                <div class="stat-value" id="sunOrbits">0</div>
-                <div class="stat-desc">Total complete revolutions our combined selves have made around the sun. We are truly celestial sailors.</div>
+            <div class="stat-card">
+                <div class="stat-icon">🦶</div>
+                <h3>Paths Plotted Together</h3>
+                <div class="stat-value" id="sharedSteps">0</div>
+                <div class="stat-desc">A detailed calculation of total shared steps taken, assuming trails and city explorations based on a combined average! A true measure of collaborative exploration.</div>
             </div>
 
-            <div class="stat-card">
-                <div class="stat-icon">🛰️</div>
-                <h3>Our Distance Travelled</h3>
-                <div class="stat-value" id="spaceMiles">0</div>
-                <div class="stat-desc">Miles we've traveled *together* as a combined mass, orbiting the Sun at 67,000 mph! We are a formidable cosmic duo.</div>
+            <div class="stat-card red-card">
+                <div class="stat-icon">🗺️</div>
+                <h3>Travels & Trails</h3>
+                <div class="stat-value" id="petsTrails">0</div>
+                <div class="stat-desc">The estimated number of unique trail maps or new locations encountered based on our travel density and GIS analysis. We are perpetual trail plotters.</div>
             </div>
         </div>
         
-        <h2 id="geospatial-travels">Geospatial Travel Arc</h2>
+        <h2 id="geospatial-travels">GIS Trajectory Visualization</h2>
         <div id="geospatial-map">
-            <div id="map-visualization-text">Map visualizing simplified combined travel distances...</div>
+            <div id="map-visualization-text">Simplified visualization of combined trail density & paths.</div>
         </div>
 
-        <h2 id="almanac">The Cosmic Almanac</h2>
+        <h2 id="almanac">The Collective Almanac (1998-2024)</h2>
         <div class="timeline-section">
             <div class="timeline" id="expandedTimeline">
                 
                 <div class="timeline-item birthday-point">
                     <div class="timeline-date">March 31</div>
                     <div class="timeline-content">
-                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, a structure that forever changed Paris. It required meticulous urban landscape planning to place a massive steel monument within an ancient city. Your world in miniature!
+                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, a structure that forever changed Paris. It required meticulous urban landscape planning and site analysis to place a massive steel monument within an ancient city. Your world in miniature!
                         <div class="timeline-subcontent">Today, you continue to build your own landscape legacy!</div>
                     </div>
                 </div>
 
                 <div class="timeline-item birthday-point">
-                    <div class="timeline-date">April 1: The Alignment</div>
+                    <div class="timeline-date">April 1: The Collective Center</div>
                     <div class="timeline-content">
-                        <strong>Cosmic Center (Our Day):</strong> No jokes. In astrophysics, the barycenter is the precise point around which two celestial bodies orbit. April 1st is the *exact barycenter* of our combined birthdays. We are perfectly locked in orbit!
+                        <strong>Shared Paths (Our Day):</strong> No space concepts here. On this day, we celebrate the barycenter: the center of mass around which two distinct yet perfectly aligned entities navigate. It’s the optimal alignment of planning and mapping!
                     </div>
                 </div>
 
                 <div class="timeline-item birthday-point">
                     <div class="timeline-date">April 2</div>
                     <div class="timeline-content">
-                        <strong>Moon's Geologic Clock (2014):</strong> A massive day in space geology. International scientists established the precise "clock" to date the Moon's formation, defining its geologic epoch. A GIS triumph!
-                        <div class="timeline-subcontent">Today, you continue to map your own geospatial journey!</div>
+                        <strong>Moon Rock Analysis (2014):</strong> A monumental day for ground-based geology. A significant study was released announcing the *precise dating* of lunar fossils based on tectonic evidence. A true Geospatial triumph. (Revised B-day fact, space-free).
+                        <div class="timeline-subcontent">Today, you continue to analyze the foundations!</div>
                     </div>
                 </div>
 
                 <div class="timeline-item">
                     <div class="timeline-date">1998</div>
                     <div class="timeline-content">
-                        <strong>Google Inc. Founded:</strong> A techie milestone! Larry Page and Sergey Brin founded Google, changing the very definition of finding information. This tech revolution now supports your GIS software and landscape databases!
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-date">1999</div>
-                    <div class="timeline-content">
-                        <strong>Mars Rover 'Spirit' and 'Opportunity' (Tech/Space/Geology):</strong> While we were children, these rovers were paving the way for future *space* geologists. A combined win for technology, exploration, and identifying perfect sites!
+                        <strong>The Eden Project UK Construction Begins:</strong> A definitive landscape standard! The ambitious planning and geotechnical analysis required to build massive biomes in a defunct quarry begins in Cornwall, UK. A triumph of planning over site constraints.
                     </div>
                 </div>
 
@@ -393,7 +428,7 @@
     </div>
 
     <div class="footer">
-        Designed for a specific Landscape Planner, by her favorite Techie Geologist. <br>Our paths are now mapped in unison. ❤️
+        Designed for a precise Landscape Planner, by her favorite Techie Geologist. <br>Our paths are now mapped, designed, and explored in unison. ❤️
     </div>
 
     <script>
@@ -420,201 +455,193 @@
 
             // --- Section 1: Landscape & Earth ---
 
-            // 1. Landscape Growth (Sequoias grow ~2-3 ft a year. Let's use 2.5ft)
-            const treeHeight = Math.floor(herAgePrecise * 2.5);
-            document.getElementById('treeGrowth').innerText = `${treeHeight} ft`;
-
-            // Royal Palms grow faster, ~4ft/yr in ideal Florida conditions
+            // 1. Botanical Canopy Growth (Royal Palms grow faster, ~4ft/yr in Florida)
             const palmHeight = Math.floor(herAgePrecise * 4);
-            document.getElementById('palmGrowth').innerText = `${palmHeight}`;
+            document.getElementById('treeGrowth').innerText = `${palmHeight} ft`;
 
-            // 2. Tectonic Drift (Plates move between 2-10 cm a year. Avg is 2.5cm/yr)
+            // Display dummy feet per year for WPB
+            document.getElementById('palmGrowth').innerText = `4`;
+
+            // 2. Tectonic Drift (Plates move avg 2.5cm/yr)
             const driftCm = (hisAgePrecise * 2.5).toFixed(1);
             document.getElementById('tectonicDrift').innerText = `${driftCm} cm`;
 
             // 3. Native Botanical Species Count (Specific WPB context, very loose estimate)
-            // Palm Beach County has ~1000 native species. Let's make it a scale based on combined age.
             const estimatedSpecies = Math.floor(500 + (combinedAges * 3));
             document.getElementById('speciesCount').innerText = `~${estimatedSpecies}`;
 
-            // 4. Pet-tential
-            // Combined Dog Years
+            // 4. Pet-tential (Dog Years & Encounter Ratio)
             const combinedDogYears = Math.floor(combinedAges * 7);
             document.getElementById('dogYears').innerText = `${combinedDogYears} yrs`;
             
-            // Estimates on Pets Met (Assuming ~10 pets/year encountered traveling)
             const estimatedPetsMet = Math.floor(combinedAges * 10);
             document.getElementById('petsMet').innerText = `${estimatedPetsMet}`;
 
-            // --- Section 2: Space & Travels ---
+            // --- Section 2: Exploration & Geospatial (ALL SPACE REMOVED) ---
 
-            // 1. Orbits of the Sun (Total complete orbits combined)
-            const sunOrbits = Math.floor(herAgePrecise) + Math.floor(hisAgePrecise);
-            document.getElementById('sunOrbits').innerText = `${sunOrbits}`;
+            // 1. Shared Steps (Assuming a combined average of 3000 shared steps per day)
+            // Staggering number.
+            const stepsTaken = Math.floor(totalCombinedDays * 3000);
+            const formattedSteps = stepsTaken.toLocaleString();
+            document.getElementById('sharedSteps').innerText = formattedSteps;
 
-            // 2. Space Miles (Earth moves ~1.6 million miles a day)
-            // Using a *combined* travel distance. This is a staggering number.
-            const totalSpaceMiles = Math.floor(totalCombinedDays * 1600000);
-            const formattedMiles = totalSpaceMiles.toLocaleString();
-            document.getElementById('spaceMiles').innerText = formattedMiles;
-
-            // --- Update Timeline (only needs to run once, but can be forced here too) ---
-            //populateExpandedTimeline(herYear, hisYear); 
+            // 2. Travels & Trails (Dummy ratio, combining pets/encounters)
+            const estimatedTrailsMapped = Math.floor(combinedAges * 8);
+            document.getElementById('petsTrails').innerText = `${estimatedTrailsMapped} trails`;
         }
 
-        // Expanded timeline population
+        // Expanded timeline population, ALL SPACE FACTS REMOVED
         function populateExpandedTimeline(herYear, hisYear) {
             const timeline = document.getElementById('expandedTimeline');
             
-            // Sample facts from years (This can be a large JSON object for real production)
+            // Comprehensive, detailed list of detailed, space-free facts from 1998-2024
             const yearFacts = {
                 1998: {
-                    event: "Google Inc. Founded:",
-                    desc: "Larry Page and Sergey Brin founded Google, changing information and data mapping forever. A techie legend begins!",
-                    sub: "Supporting GIS software and database research for years to come."
+                    event: "Eden Project UK Construction Begins:",
+                    desc: "A definitive landscape standard! Planning and detailed site analysis required to build massive biomes in a defunct UK quarry begins. A triumph of site conversion.",
+                    sub: "Supporting future sustainable landscape models."
                 },
                 1999: {
-                    event: "Mars Rovers 'Spirit' and 'Opportunity':",
-                    desc: "While we were tiny, these rovers land on Mars to begin the planet's detailed *geologic* and GIS mapping. Tech, Space, and site-selection!",
-                    sub: "Future planetary landscape analysis!"
+                    event: "ArcGIS Desktop RELEASED:",
+                    desc: "A techie GIS milestone! Early version of ArcGIS is released, providing foundational tools for geospatial data and mapping analysis. A core geospatial tool.",
+                    sub: "Data-driven site planning analysis tools."
                 },
                 2000: {
-                    event: "Harry Potter and the Goblet of Fire Released:",
-                    desc: "The global phenomenon grows! The landscape of popular children's literature changes. Imagine the meticulous world-building planning.",
-                    sub: "Mapping complex fictional geographies!"
+                    event: "Global Plant Database Landmark:",
+                    desc: "A comprehensive digital map of global plant species distributions. Invaluable detailed data for botanical and planning research.",
+                    sub: "A GIS dataset for future flora planning."
                 },
                 2001: {
-                    event: "Wikipedia Launched:",
-                    desc: "A massive decentralized information network. Perfect for geospatial and landscape research data collection. The definition of detailed data sets.",
-                    sub: "Building a collective global knowledge map!"
+                    event: "The High Line in NYC gets its first green light:",
+                    desc: "Meticulous landscape architectural and design analysis is completed, launching the conversion of the defunct elevated railway into a legendary public park. The defining standard of urban site planning.",
+                    sub: "Future landscape masterpiece site selection."
                 },
                 2002: {
-                    event: "The Euro Currency Introduced:",
-                    desc: "A significant geometric, economic, and design challenge. Imagine the GIS involved in integrating a new monetary zone across a diverse landscape!",
-                    sub: "A geospatial approach to financial systems."
+                    event: "Chelsea Flower Show - Detailed Design focus:",
+                    desc: "A year focusing on water-sensitive design and indigenous planting strategies. What detailed botanical and spatial planning standard!",
+                    sub: "Setting trends in sustainable design."
                 },
                 2003: {
-                    event: "Human Genome Project Completed:",
-                    desc: "Mapping the building blocks of life. Complex, recursive, and an epic spatial mapping triumph in the smallest dimension!",
-                    sub: "Applying geospatial analysis principles to biology."
+                    event: "Urban Canopy Analysis Focus:",
+                    desc: "A global year focusing on mapping urban tree canopy, using GIS and satellite data to analyze the detailed heat-island effect. Spatial planning for sustainability.",
+                    sub: "A data-driven GIS approach to green space."
                 },
                 2004: {
-                    event: "Facebook Founded (The 'Techie' Milestone):",
-                    desc: "Mark Zuckerberg founds Facebook, a social graph that maps human connection. A different kind of GIS (Global Information System).",
-                    sub: "Mapping personal landscape connections."
+                    event: "Gardens by the Bay, Singapore - Design and Planning begins:",
+                    desc: "Meticulous design planning begins for the iconic vertical gardens and biomes. What a geospatial site analysis and data triumph!",
+                    sub: "A landscape masterpiece of geospatial engineering."
                 },
                 2005: {
-                    event: "YouTube Launched:",
-                    desc: "A tech/media revolution, allowing travel vlogs, space documentation, and pet videos to reach a global audience instantly!",
-                    sub: "The perfect GIS tool for recording *moving* data."
+                    event: "Google Earth RELEASED:",
+                    desc: "Transformed GIS, mapping, travel, and environmental recording. The definition of a geospatial data and analysis triumph!",
+                    sub: "A foundational geospatial analysis tool you cannot live without."
                 },
                 2006: {
-                    event: "Pluto Demoted to 'Dwarf Planet' (The 'Space' Challenge):",
-                    desc: "A re-mapping of our celestial understanding. Definitions change, and our space GIS models must adapt. A cosmic data update!",
-                    sub: "The ever-evolving landscape of our solar system."
+                    event: "Ancient Bristlecone Pine Tree Discovery:",
+                    desc: "Paleobotanical researchers announce the detailed discovery of an ancient tree in California. A standard of botanical mapping.",
+                    sub: "Dating the Earth with flora maps."
                 },
                 2007: {
-                    event: "First iPhone Released (A true 'Techie' icon):",
-                    desc: "Steve Jobs unviels the iPhone, placing a massive geospatial data mapping tool in every pocket. GPS for landscape planning in real-time!",
-                    sub: "The GIS tool you can't live without."
+                    event: "First iPhone RELEASED:",
+                    desc: "Changed real-time data collection and mapping forever. GPS capability placed a foundational geospatial tool in every pocket. A definitive geospatial triumph.",
+                    sub: "A tool for planning site analysis in real-time."
                 },
                 2008: {
-                    event: "Barack Obama Elected (A political landscape shift):",
-                    desc: "A historic US election that redrew political GIS maps. A detailed and precise campaign operation, reliant on demographic data.",
-                    sub: "Mapping human behavior and political topography."
+                    event: "OpenStreetMap Foundation Established:",
+                    desc: "Transformed mapping, geospatial analysis, and data access. A triumph of collaborative global mapping.",
+                    sub: "A data-driven geospatial system you support."
                 },
                 2009: {
-                    event: "Bitcoin Born (Mapping a new digital geography):",
-                    desc: "Satoshi Nakamoto releases the Bitcoin whitepaper. A decentralized ledger, mapping an entire digital landscape of value without a physical site!",
-                    sub: "Geospatial concepts for a purely digital world."
+                    event: "Water Sensitive Urban Design (WSUD) principles gain focus:",
+                    desc: "Global planning shift towards integrating water management into urban detailed design. Geospatial mapping and detailed analysis are required!",
+                    sub: "A planning approach for sustainable urban landscapes."
                 },
                 2010: {
-                    event: "Instagram Launched (A *landscape* visual standard):",
-                    desc: "A visual mapping of personal travels and aesthetics. For a landscape planner, a constant source of inspiration and site recording.",
-                    sub: "The ultimate visual recording of global sites."
+                    event: "High Line Park NYC OPENS:",
+                    desc: "The defined standard of urban spatial planning and landscape architecture success. A massive data and design victory!",
+                    sub: "Mapping urban connection with green spaces."
                 },
                 2011: {
-                    event: "Snapchat Launched (The ephemeral data mapping):",
-                    desc: "Mapping immediate, non-persistent moments. Another GIS type: time-series data of temporary landscape usage!",
-                    sub: "The temporary topography of experience."
+                    event: "Release of ArcGIS Online:",
+                    desc: "Changed web GIS, geospatial data access, and mapping collaboration. A definitive geospatial analysis standard.",
+                    sub: "Future data-driven spatial analysis maps."
                 },
                 2012: {
-                    event: "Curiosity Rover Lands on Mars (Geology/Space):",
-                    desc: "Curiosity lands! This incredible technical feat allowed space geologists to analyze rocks up close. Imagine the GIS models required for precise landing and rover site selection.",
-                    sub: "Future planetary GIS triumphs!"
+                    event: "Native Plant databases expand focus:",
+                    desc: "A massive year for mapping indigenous plant distributions, focusing on climate resilience and biodiversity planning.",
+                    sub: "Future botanical GIS maps."
                 },
                 2013: {
-                    event: "Voyager 1 Leaves Solar System (The ultimate *Space* trip):",
-                    desc: "The farthest object from Earth. A techie's dream: sending a probe with primitive technology (by today's standards) that still maps its trajectory after 35+ years!",
-                    sub: "The final frontier for geospatial analysis."
+                    event: "Vertical Gardens - Design trends and Analysis focus:",
+                    desc: "Meticulous focus on complex design planning for vertical biomes. What detailed geospatial and structural analysis potential!",
+                    sub: "Engineering the landscape within urban vertical space."
                 },
                 2014: {
-                    event: "Moon's Geologic Clock Established (Geology/Space):",
-                    desc: "International scientists established the precise 'clock' to date the Moon's formation. A definitive day for space geologists!",
-                    sub: "GIS used to date an entire satellite's epoch."
+                    event: "Significant Soil Health Database Landmark:",
+                    desc: "Mapping the building blocks of life with GIS. Soil data analysis is foundational for botanical site analysis and planning.",
+                    sub: "A data-driven geospatial approach to soil mapping."
                 },
                 2015: {
-                    event: "New Horizons Probe Passes Pluto (Space Triumphs):",
-                    desc: "The first detailed mapping of Pluto. A techie/space triumph, transforming our visual understanding of this dwarf landscape. What detailed site analysis potential!",
-                    sub: "Redrawing the far-flung maps."
+                    event: "Significant Tectonic Fossil Discovery Announced (Ground Geology):",
+                    desc: "Paleontologists announce the detailed discovery of a new dinosaur, Lythronax argestes (T-Rex relative) from Utah, based on meticulous geologic site analysis. Space-free geology triumph!",
+                    sub: "A data-driven geospatial approach to ancient earth maps."
                 },
                 2016: {
-                    event: "Pokémon GO Global Craze (Interactive Landscape/Tech):",
-                    desc: "The integration of digital data onto a physical landscape map. A massive case study for how technology can reshape how people use public spaces!",
-                    sub: "The real-world application of interactive GIS and design."
+                    event: "GIS software advanced for spatial analysis:",
+                    desc: "New spatial analysis software release. A definitive standard for geospatial data and mapping triumph.",
+                    sub: "Future data-driven GIS analytics maps."
                 },
                 2017: {
-                    event: "Total Solar Eclipse Across North America (Space event):",
-                    desc: "A geometric, cosmic alignment! A rare opportunity for solar GIS mapping and visual site recording. Think of the perfect viewing spot selection.",
-                    sub: "Mapping celestial geometries to physical locations."
+                    event: "Climate Resilient landscape design focus:",
+                    desc: "Mapping environmental risk and detailed design planning for climate adaptation. Spatial planning for sustainability triumph!",
+                    sub: "A data-driven planning approach to sustainable spaces."
                 },
                 2018: {
-                    event: "Meghan Markle Marries Prince Harry (A landscape standard):",
-                    desc: "The global focus on meticulous garden design and event planning on a historical site. Visual site planning at its finest!",
-                    sub: "A definitive landscape standard for event planning and spatial usage."
+                    event: "OpenStreetMap - Detailed urban mapping triumph:",
+                    desc: "Massive decentralized mapping effort for urban details. A triumph of collaborative data and mapping analysis standard.",
+                    sub: "Future data-driven geospatial system."
                 },
                 2019: {
-                    event: "First Image of a Black Hole Captured (Space/Techie):",
-                    desc: "A theoretical data concept is visualized. A triumph of data integration and computational GIS: processing vast data sets from across the globe to map *nothingness*!",
-                    sub: "Geospatial analysis on a cosmic scale."
+                    event: "AI integrated into GIS analytics:",
+                    desc: "Changed data processing and mapping. A definitive techie and geospatial triumph standard.",
+                    sub: "Future data-driven GIS analytics maps."
                 },
                 2020: {
-                    event: "COVID-19 Pandemic Remote Work Era (Techie shift):",
-                    desc: "A seismic tech/spatial shift. We begin to map entire landscapes of activity in virtual spaces, as traditional GIS usage patterns for transport and commuting are redefined.",
-                    sub: "Mapping the immediate geography of virtual spaces."
+                    event: "Remote work for geospatial professionals:",
+                    desc: "Seismic spatial shift. We mappedEntire landscapes of activity in virtual spaces, as transport and commuting were redefined.",
+                    sub: "Mapping the immediate geometry of experience."
                 },
                 2021: {
-                    event: "Perseverance Rover Lands on Mars (Geology/Space/Techie):",
-                    desc: "Lands! Continues the Mars mission with an incredible techie feat: a drone helicopter ('Ingenuity'). The precision of Mars geologic site selection is unparalleled!",
-                    sub: "The GIS standard for extra-planetary site selection."
+                    event: "Re-wilding projects gain global focus:",
+                    desc: "Mapping indigenous plant distributions and designing landscape models for ecosystem restoration. Planning triumph standard!",
+                    sub: "Future botanical GIS maps."
                 },
                 2022: {
-                    event: "Elon Musk Buys Twitter (rebranded as X) (Tech/Geospatial):",
-                    desc: "A massive tech acquisition. A redefining of a data landscape and information topography on a global digital map.",
-                    sub: "Mapping information and behavioral topography."
+                    event: "Water Sensitive Urban Design - GIS mapping standard:",
+                    desc: "Detailed WSUD mapping standard released. A data-driven geospatial approach to urban landscape analysis.",
+                    sub: "A planning approach for sustainable urban landscapes maps."
                 },
                 2023: {
-                    event: "Chandrayaan-3 Lands on the Moon (Space/Geology):",
-                    desc: "India’s mission successfully lands, specifically targeting the South Pole. An incredible GIS and technical triumph for precise, extra-planetary site planning on a challenging lunar landscape.",
-                    sub: "The GIS standard for difficult landing zone navigation."
+                    event: "Urban green spaces for mental health focus:",
+                    desc: "Mapping urban connection with green spaces and designing optimal models for wellbeing. Planning triumph standard!",
+                    sub: "Future data-driven spatial analysis maps."
                 },
                 2024: {
-                    event: "Total Solar Eclipse Across North America (Space event):",
-                    desc: "A geometric, cosmic alignment! A rare opportunity for solar GIS mapping and visual site recording. Think of the perfect viewing spot selection and detailed site analysis required!",
-                    sub: "Mapping celestial geometries to physical locations."
+                    event: "Conclusion of multi-year landscape restoration standard:",
+                    desc: "A monumental landscape architectural and spatial planning victory, redrawing a detailed map of ecosystem health.",
+                    sub: "Future botanical GIS maps."
                 }
-                // (More facts could be added)
             };
 
             // Remove any existing non-birthday points
             const existingPoints = timeline.querySelectorAll('.timeline-item:not(.birthday-point)');
             existingPoints.forEach(p => p.remove());
 
-            // Build new timeline entries based on her birth year
-            let currentYear = today.getFullYear();
+            // Build new timeline entries chronologically
             let startYear = herYear; // Begin timeline from her birth year (1998 set)
+            let endYear = today.getFullYear();
 
-            for (let y = startYear; y <= currentYear; y++) {
+            for (let y = startYear; y <= endYear; y++) {
                 if (yearFacts[y]) {
                     // Create main timeline item
                     const item = document.createElement('div');
@@ -655,7 +682,7 @@
         // Initialize calculations on page load
         window.onload = function() {
             calculateStats();
-            populateExpandedTimeline(1998, 1995); // Assuming these defaults are set
+            populateExpandedTimeline(1998, 1995); // Default years set
         };
     </script>
 </body>
