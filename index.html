@@ -84,22 +84,14 @@
         }
         .site-zero-desc { font-size: 1.1em; color: var(--text-light); max-width: 800px; margin: 0 auto 30px; line-height: 1.8; }
         
-        /* Updated Gallery for 2 Centered Images */
+        /* Gallery for 2 Centered Images */
         .gallery-container { 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            flex-wrap: wrap; 
-            gap: 20px; 
-            margin-bottom: 30px; 
+            display: flex; justify-content: center; align-items: center; 
+            flex-wrap: wrap; gap: 20px; margin-bottom: 30px; 
         }
         .gallery-img { 
-            width: 100%; 
-            max-width: 380px; 
-            height: 250px; 
-            object-fit: cover; 
-            border-radius: 10px; 
-            border: 2px solid var(--stem-green); 
+            width: 100%; max-width: 380px; height: 250px; object-fit: cover; 
+            border-radius: 10px; border: 2px solid var(--stem-green); 
             transition: transform 0.3s ease, border-color 0.3s; 
             box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
@@ -120,23 +112,6 @@
         .purple-card .stat-value { color: var(--petal-purple); }
         .red-card { border-top-color: var(--petal-red); }
         .red-card .stat-value { color: var(--petal-red); }
-
-        /* Timeline */
-        .timeline-section { margin-top: 100px; }
-        .timeline { position: relative; padding-left: 35px; margin-top: 30px; margin-bottom: 50px; }
-        .timeline::before { content: ''; position: absolute; left: 12px; top: 0; bottom: 0; width: 5px; background: var(--stem-green); border-radius: 3px; }
-        .timeline-item { margin-bottom: 50px; position: relative; opacity: 0.9; transition: opacity 0.3s; }
-        .timeline-item:hover { opacity: 1; }
-        .timeline-item::before { content: ''; position: absolute; left: -33px; top: 8px; width: 20px; height: 20px; border-radius: 50%; background: var(--neon-blue); border: 4px solid var(--nocturnal-dark); box-shadow: 0 0 15px var(--neon-blue); transition: transform 0.3s; }
-        .timeline-item:hover::before { transform: scale(1.3); }
-        
-        .timeline-item.birthday-point::before { background: var(--bloom-gold); box-shadow: 0 0 15px var(--bloom-gold); }
-        .timeline-item.meeting-point::before { background: var(--petal-purple); box-shadow: 0 0 15px var(--petal-purple); }
-
-        .timeline-date { font-weight: bold; color: var(--stem-green); font-size: 1.5em; margin-bottom: 10px; text-transform: uppercase;}
-        .timeline-content { background: rgba(30, 30, 30, 0.95); padding: 25px; border-radius: 18px; border-left: 5px solid var(--neon-blue); box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
-        .timeline-item.meeting-point .timeline-content { border-left-color: var(--petal-purple); }
-        .timeline-content strong { color: var(--text-light); }
 
         /* CONTRACT & DUAL SEAL SECTION */
         .contract-section {
@@ -190,15 +165,8 @@
             margin: 10px 0;
         }
         
-        .ashish-sig {
-            color: var(--neon-blue); transform: rotate(-3deg);
-            opacity: 1; 
-        }
-        
-        .megan-sig {
-            color: var(--bloom-gold); transform: rotate(-5deg);
-            opacity: 0; display: none; 
-        }
+        .ashish-sig { color: var(--neon-blue); transform: rotate(-3deg); opacity: 1; }
+        .megan-sig { color: var(--bloom-gold); transform: rotate(-5deg); opacity: 0; display: none; }
         
         .timestamp { font-family: monospace; font-size: 0.85em; margin-top: 10px; }
         .ashish-time { color: var(--stem-green); opacity: 1; }
@@ -291,36 +259,31 @@
             </div>
         </div>
 
-        <h2 id="almanac">The Collective Almanac</h2>
-        <div class="timeline-section">
-            <div class="timeline" id="expandedTimeline">
-                <div class="timeline-item birthday-point">
-                    <div class="timeline-date">March 31</div>
-                    <div class="timeline-content">
-                        <strong>The Eiffel Tower (1889):</strong> Inagurated on this day, requiring meticulous urban landscape planning.
-                    </div>
-                </div>
+        <h2 id="almanac">The Variables of Us</h2>
+        <div class="stats-grid" style="margin-top: 30px; margin-bottom: 50px;">
+            <div class="stat-card purple-card">
+                <div class="stat-icon">🌸</div>
+                <h3>Variable M: March 31</h3>
+                <div class="stat-desc">The day the world gained a visionary Landscape Planner. The aesthetic, the vision, and the life of the equation.</div>
+            </div>
 
-                <div class="timeline-item birthday-point">
-                    <div class="timeline-date">April 1: The Collective Center</div>
-                    <div class="timeline-content">
-                        <strong>Shared Paths (Our Day):</strong> On this day, we celebrate the barycenter: the exact center of our dates.
-                    </div>
-                </div>
+            <div class="stat-card">
+                <div class="stat-icon">⛏️</div>
+                <h3>Variable A: April 2</h3>
+                <div class="stat-desc">The day the world gained a Techie Geologist. The structure, the mapping, and the foundation of the equation.</div>
+            </div>
 
-                <div class="timeline-item birthday-point">
-                    <div class="timeline-date">April 2</div>
-                    <div class="timeline-content">
-                        <strong>Moon Rock Analysis (2014):</strong> A monumental day for ground-based geology.
-                    </div>
-                </div>
+            <div class="stat-card red-card">
+                <div class="stat-icon">⛩️</div>
+                <h3>The Catalyst: Dec 2025</h3>
+                <div class="stat-desc">Morikami Gardens. The specific geospatial coordinate where the two variables finally interacted and the real magic began.</div>
+            </div>
 
-                <div class="timeline-item meeting-point">
-                    <div class="timeline-date">December 2025</div>
-                    <div class="timeline-content">
-                        <strong>The Most Important Site Survey:</strong> We met at the Morikami Museum and Japanese Gardens. Two paths became one.
-                    </div>
-                </div>
+            <div class="stat-card">
+                <div class="stat-icon">♾️</div>
+                <h3>The Solution: April 1</h3>
+                <div class="stat-value" style="font-size: 2em; margin: 15px 0;">31 + 2 = 1</div>
+                <div class="stat-desc">The exact mathematical center. Why have two parties when we can combine our data sets into one perfect celebration?</div>
             </div>
         </div>
 
